@@ -1,14 +1,15 @@
 "use client";
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useDispatch } from "react-redux";
-import { Button, Card, Form } from "react-bootstrap";
+import { Alert, Button, Card, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import ReactLoading from "react-loading";
 import * as yup from "yup";
 
 import { LoginCard, LoginCardHeader, LoginCardInner, LoginCardOuter } from "./styles";
 import axios from "../../../hooks/axiosInstance";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const schema = yup
     .object({
@@ -18,6 +19,8 @@ const schema = yup
     .required();
 
 const Login = () => {
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
     const router = useRouter();
     const {
         register,
@@ -28,10 +31,17 @@ const Login = () => {
     });
 
     const onSubmit = (data) => {
-        axios.post(`/login`, data).then(async ({ data }) => {
-            localStorage.setItem("userToken", data);
-            router.push("/");
-        });
+        setLoading(true);
+        axios
+            .post(`/login`, data)
+            .then(async ({ data }) => {
+                localStorage.setItem("userToken", data);
+                router.push("/");
+            })
+            .catch(() => {
+                setError(true);
+            })
+            .finally(() => setLoading(false));
     };
 
     return (
@@ -51,7 +61,7 @@ const Login = () => {
                                         Esse campo é necessário
                                     </Form.Control.Feedback>
                                 </Form.Group>
-                                <Form.Group controlId="password">
+                                <Form.Group className="mb-3" controlId="password">
                                     <Form.Label>Senha</Form.Label>
                                     <Form.Control
                                         isInvalid={errors.password}
@@ -62,8 +72,14 @@ const Login = () => {
                                         Esse campo é necessário
                                     </Form.Control.Feedback>
                                 </Form.Group>
-                                <Button className="mt-3" type="submit">
-                                    Login
+                                {error ? <Alert variant="danger">Usuário ou senha inválidos.</Alert> : null}
+
+                                <Button disabled={loading ? true : false} type="submit">
+                                    {loading ? (
+                                        <ReactLoading type="spin" color="#fff" height={"25px"} width={"25px"} />
+                                    ) : (
+                                        "Login"
+                                    )}
                                 </Button>
                             </Form>
                         </Card.Body>

@@ -11,7 +11,6 @@ export const LoginCardInner = styled.div`
     left: 0;
     justify-content: center;
     display: flex;
-    height: 290px;
     width: 100%;
 `;
 
