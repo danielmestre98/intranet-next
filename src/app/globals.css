@@ -1,0 +1,52 @@
+.btn-outline-primary {
+    border-color: #034ea2 !important;
+    color: #034ea2 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #034ea2 !important;
+    color: #fff !important;
+}
+
+.btn-primary {
+    border-color: #034ea2 !important;
+    background-color: #034ea2 !important;
+}
+
+.btn-primary:hover {
+    background-color: #133654 !important;
+    border-color: #133654 !important;
+}
+
+.container {
+    max-width: 1330px !important;
+}
+
+.loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
+}
+
+button.link {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button.link:hover {
+    color: #069;
+}
+
+body {
+    background-color: #eee !important;
+}

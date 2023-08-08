@@ -62,7 +62,9 @@ const Login = () => {
                                         Esse campo é necessário
                                     </Form.Control.Feedback>
                                 </Form.Group>
-                                <Button type="submit">Login</Button>
+                                <Button className="mt-3" type="submit">
+                                    Login
+                                </Button>
                             </Form>
                         </Card.Body>
                     </LoginCard>

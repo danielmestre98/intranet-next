@@ -11,12 +11,13 @@ export const LoginCardInner = styled.div`
     left: 0;
     justify-content: center;
     display: flex;
-    height: 320px;
+    height: 290px;
     width: 100%;
 `;
 
 export const LoginCard = styled(Card)`
     width: 350px;
+    box-shadow: 0px 0px 5px #ccc;
 `;
 
 export const LoginCardHeader = styled.div`
