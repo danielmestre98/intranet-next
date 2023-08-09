@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import { NavbarIntranet, NavItem, NavDropdownHeader, RouterLink, RouterLinkDropdown } from "./styles";
 
 const Navbar = () => (
-    <Container>
+    <Container className="mb-3">
         <NavbarIntranet>
             <Nav>
                 <NavItem>
