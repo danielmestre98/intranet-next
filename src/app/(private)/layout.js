@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar/Navbar";
 import ProtectedRoute from "@/components/Routing/ProtectedRoute";
 import { useState } from "react";
+import { Container } from "react-bootstrap";
 
 export default function PrivateLayout({ children }) {
     const [loading, setLoading] = useState(true);
@@ -12,10 +13,10 @@ export default function PrivateLayout({ children }) {
             {loading ? (
                 "Carregando"
             ) : (
-                <div>
+                <Container>
                     <Navbar />
                     {children}
-                </div>
+                </Container>
             )}
         </ProtectedRoute>
     );
