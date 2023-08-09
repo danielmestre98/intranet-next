@@ -1,3 +1,7 @@
+:root {
+    --primary-color: #034ea2;
+}
+
 .btn-outline-primary {
     border-color: #034ea2 !important;
     color: #034ea2 !important;
@@ -48,5 +52,5 @@ button.link:hover {
 }
 
 body {
-    background-color: #eee !important;
+    background-color: #f7f7f7 !important;
 }

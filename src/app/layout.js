@@ -1,15 +1,11 @@
 "use client";
 
 import "./globals.css";
-import { Inter } from "next/font/google";
-import { usePathname } from "next/navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Header from "@/components/Header/Header";
 import Providers from "./Redux/provider";
 import StyledComponentsRegistry from "./registry";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
     title: ":: INTRANET SEDS ::",
@@ -17,12 +13,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-    const pathname = usePathname();
-    console.log(pathname);
-
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body>
                 <StyledComponentsRegistry>
                     <Header />
                     <Providers>{children}</Providers>
