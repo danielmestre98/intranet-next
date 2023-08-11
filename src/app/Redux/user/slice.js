@@ -32,14 +32,22 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         fetchUserData: (state, action) => {
+            //Deixar o nome do usuário apenas as primeiras letra maiúsculas
+            action.payload.usuario_nome = action.payload.usuario_nome
+                .toLowerCase()
+                .replace(/\b\w/g, (l) => l.toUpperCase());
             state.currentUser = action.payload;
         },
-        logoutUser: (state, action) => {
+        userNotif: (state, action) => {
+            state.currentUser = { ...state.currentUser, notifications: action.payload };
+        },
+        logoutUser: (state) => {
+            localStorage.removeItem("userToken");
             state.currentUser = null;
         },
     },
 });
 
-export const { fetchUserData, logoutUser } = userSlice.actions;
+export const { fetchUserData, logoutUser, userNotif } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -6,6 +6,7 @@ import { useEffect } from "react";
 const PublicRoute = ({ children, setLoading }) => {
     const router = useRouter();
     useEffect(() => {
+        document.title = ":: INTRANET SEDS ::";
         const token = localStorage.getItem("userToken");
         if (token) {
             router.push("/");

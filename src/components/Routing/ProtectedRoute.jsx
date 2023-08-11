@@ -18,6 +18,9 @@ const ProtectedRoute = ({ children, setLoading }) => {
                 .catch(() => {
                     localStorage.removeItem("userToken");
                     router.push("/login");
+                })
+                .finally(() => {
+                    setLoading(false);
                 });
         };
         const token = localStorage.getItem("userToken");
@@ -25,7 +28,6 @@ const ProtectedRoute = ({ children, setLoading }) => {
             router.push("/login");
         } else {
             fetchUser(token);
-            setLoading(false);
         }
     }, [router, setLoading, dispatch]);
 

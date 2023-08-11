@@ -1,9 +1,11 @@
 "use client";
 
 import Navbar from "@/components/Navbar/Navbar";
+import RightBar from "@/components/RightBar/RightBar";
 import ProtectedRoute from "@/components/Routing/ProtectedRoute";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
+import { PagesContentDiv, PagesMainDiv, PagesMenuDiv } from "./styles";
 
 export default function PrivateLayout({ children }) {
     const [loading, setLoading] = useState(true);
@@ -15,7 +17,12 @@ export default function PrivateLayout({ children }) {
             ) : (
                 <Container>
                     <Navbar />
-                    {children}
+                    <PagesMainDiv>
+                        <PagesContentDiv>{children}</PagesContentDiv>
+                        <PagesMenuDiv>
+                            <RightBar />
+                        </PagesMenuDiv>
+                    </PagesMainDiv>
                 </Container>
             )}
         </ProtectedRoute>
