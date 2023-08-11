@@ -9,15 +9,7 @@ import { useEffect } from "react";
 import { OverlayTrigger } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Notifications from "./Notifications/Notifications";
-import {
-    UserOptionsButton,
-    NotificationsButton,
-    UserImg,
-    UserText,
-    PopoverOptions,
-    PopoverOptionsBody,
-    PopoverOptionsItem,
-} from "./styles";
+import { UserOptionsButton, UserImg, UserText, PopoverOptions, PopoverOptionsBody, PopoverOptionsItem } from "./styles";
 
 const UserCard = () => {
     const router = useRouter();
