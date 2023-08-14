@@ -21,6 +21,7 @@ export const NotificationsButton = styled.div`
 export const NotificationCounter = styled.span`
     background-color: red;
     display: flex;
+    cursor: default;
     justify-content: center;
     align-items: center;
     border-radius: 100%;

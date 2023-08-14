@@ -12,3 +12,8 @@ export const PagesContentDiv = styled.div`
 export const PagesMenuDiv = styled.div`
     width: 300px;
 `;
+
+export const PagesHome = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
