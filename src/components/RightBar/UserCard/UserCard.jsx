@@ -52,7 +52,7 @@ const UserCard = () => {
     );
 
     return (
-        <CardIntranet cardBodyStyle={{ padding: "30px", textAlign: "center" }}>
+        <CardIntranet style={{ marginBottom: "10px" }} cardBodyStyle={{ padding: "30px", textAlign: "center" }}>
             <Notifications userNotifications={currentUser?.notifications} userLogin={currentUser?.usuario_login} />
             <UserOptionsButton>
                 <OverlayTrigger trigger="click" rootClose placement="bottom" overlay={popoverOptions}>

@@ -10,4 +10,5 @@ export const CardHeader = styled(Card.Header)`
 
 export const CardOuter = styled(Card)`
     box-shadow: 0px 1px 5px #ccc;
+    margin-bottom: 16px;
 `;

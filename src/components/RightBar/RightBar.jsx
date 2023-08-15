@@ -44,7 +44,7 @@ const RightBar = () => {
             <UserCard />
             <CardIntranet
                 cardBodyStyle={{ padding: "12px 30px 30px" }}
-                style={{ backgroundColor: "#b3cce4", marginTop: "7px", textAlign: "center", maxHeight: "140px" }}>
+                style={{ backgroundColor: "#b3cce4", marginTop: "0px", textAlign: "center", maxHeight: "140px" }}>
                 <LinkRecadastramento href="/documentacao/recadastramento">
                     <b>
                         Importante!
