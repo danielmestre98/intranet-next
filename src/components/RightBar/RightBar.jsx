@@ -9,6 +9,7 @@ import { faEnvelope, faLaptop, faPhoneSquare, faWifi, faWrench } from "@fortawes
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Birthdays from "./UserCard/Birthdays/Birthdays";
 
 function isValidURL(str) {
     try {
@@ -101,6 +102,7 @@ const RightBar = () => {
                     </MenuServicoesBotao>
                 </MenuServicos>
             </CardIntranet>
+            <Birthdays />
         </>
     );
 };
