@@ -53,3 +53,9 @@ export const MenuServicoesBotao = styled.li`
         font-size: 26px;
     }
 `;
+
+export const Spotify = styled.iframe`
+    margin-top: 10px;
+    width: 100%;
+    height: 200px;
+`;

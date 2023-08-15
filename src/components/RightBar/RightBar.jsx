@@ -3,13 +3,13 @@
 import CardIntranet from "../Card/Card";
 import UserCard from "./UserCard/UserCard";
 import axios from "../../hooks/axiosInstance";
-import { LinkRecadastramento, MenuServicoesBotao, MenuServicos } from "./styles";
+import { LinkRecadastramento, MenuServicoesBotao, MenuServicos, Spotify } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLaptop, faPhoneSquare, faWifi, faWrench } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Birthdays from "./UserCard/Birthdays/Birthdays";
+import Birthdays from "./Birthdays/Birthdays";
 
 function isValidURL(str) {
     try {
@@ -103,6 +103,7 @@ const RightBar = () => {
                 </MenuServicos>
             </CardIntranet>
             <Birthdays />
+            <Spotify title="spotify" src="https://open.spotify.com/embed-podcast/show/7dZuzlniuCoq4mTaiJUuFU" />
         </>
     );
 };

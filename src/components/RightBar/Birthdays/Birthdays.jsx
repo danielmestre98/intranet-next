@@ -3,7 +3,7 @@
 import CardIntranet from "@/components/Card/Card";
 import { useEffect, useState } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import axios from "../../../../hooks/axiosInstance";
+import axios from "../../../hooks/axiosInstance";
 import { DateBirthday, ImgBirthday, ImgBolo, NameBirthday, RowBirthday } from "./styles";
 
 const Birthdays = () => {
@@ -27,7 +27,7 @@ const Birthdays = () => {
                     <ImgBolo src="/img/assets/bolo.png" /> Aniversariantes da semana
                 </>
             }
-            style={{ marginTop: "15px" }}
+            style={{ marginTop: "10px" }}
             cardBodyStyle={{ padding: "5px", maxHeight: "400px", overflow: "auto" }}>
             {birthdays.length > 0
                 ? birthdays.map((element) => {
