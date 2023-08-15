@@ -62,7 +62,7 @@ const RightBar = () => {
                     <MenuServicoesBotao
                         onClick={handleMenuServicoClick}
                         id={
-                            tecnicos.suporte?.includes(currentUser.usuario_login.toLowerCase())
+                            tecnicos.suporte?.includes(currentUser?.usuario_login?.toLowerCase())
                                 ? `http://10.22.0.38:83/redesocial/?lnk=helpdesk&view=home&l=${currentUser.usuario_login}`
                                 : "/chamados/novo-chamado"
                         }>
@@ -73,7 +73,7 @@ const RightBar = () => {
                     <MenuServicoesBotao
                         onClick={handleMenuServicoClick}
                         id={
-                            tecnicos.manutencao?.includes(currentUser.usuario_login.toLowerCase())
+                            tecnicos.manutencao?.includes(currentUser?.usuario_login?.toLowerCase())
                                 ? `http://10.22.0.38:83/redesocial/?lnk=manutencao&view=chamados&l=${currentUser.usuario_login}`
                                 : "/chamados/novo-chamado-manut"
                         }>
