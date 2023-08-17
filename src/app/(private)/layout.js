@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import RightBar from "@/components/RightBar/RightBar";
 import ProtectedRoute from "@/components/Routing/ProtectedRoute";
@@ -15,15 +16,18 @@ export default function PrivateLayout({ children }) {
             {loading ? (
                 "Carregando"
             ) : (
-                <Container>
-                    <Navbar />
-                    <PagesMainDiv>
-                        <PagesContentDiv>{children}</PagesContentDiv>
-                        <PagesMenuDiv>
-                            <RightBar />
-                        </PagesMenuDiv>
-                    </PagesMainDiv>
-                </Container>
+                <>
+                    <Container>
+                        <Navbar />
+                        <PagesMainDiv>
+                            <PagesContentDiv>{children}</PagesContentDiv>
+                            <PagesMenuDiv>
+                                <RightBar />
+                            </PagesMenuDiv>
+                        </PagesMainDiv>
+                    </Container>
+                    <Footer />
+                </>
             )}
         </ProtectedRoute>
     );
