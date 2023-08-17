@@ -6,6 +6,7 @@ export const PagesMainDiv = styled.div`
 `;
 export const PagesContentDiv = styled.div`
     margin-right: 12px;
+    max-width: 994px;
     flex-grow: 1;
 `;
 
@@ -16,4 +17,8 @@ export const PagesMenuDiv = styled.div`
 export const PagesHome = styled.div`
     display: flex;
     justify-content: space-between;
+`;
+
+export const Red = styled.span`
+    color: red;
 `;

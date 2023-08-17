@@ -6,6 +6,13 @@ export const CardHeader = styled(Card.Header)`
     color: #fff;
     font-weight: bold;
     padding: 12px 20px;
+
+    &.display-4 div {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        font-weight: 300 !important;
+        margin-bottom: 16px;
+    }
 `;
 
 export const CardOuter = styled(Card)`
