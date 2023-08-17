@@ -3,12 +3,18 @@
 }
 
 .btn-outline-primary {
-    border-color: #034ea2 !important;
-    color: #034ea2 !important;
+    border-color: #133654 !important;
+    color: #133654 !important;
 }
 
 .btn-outline-primary:hover {
-    background-color: #034ea2 !important;
+    background-color: #133654 !important;
+    color: #fff !important;
+}
+
+.btn-check:checked + .btn {
+    background-color: #133654 !important;
+    border-color: #133654 !important;
     color: #fff !important;
 }
 
@@ -53,4 +59,8 @@ button.link:hover {
 
 body {
     background-color: #f7f7f7 !important;
+}
+
+.row {
+    margin-bottom: 10px;
 }
