@@ -11,7 +11,7 @@ const Assinatura = () => {
             <p>Antes de continuar, leia atentamente esta página.</p>
             <p>Existem algumas informações que podem ter ficado confusas e esperamos, assim, esclarecê-las.</p>
             <p>
-                Você irá baixar um arquivo chamado "modelo". Ele estará em formato de arquivo PPTX. Este é o formato
+                Você irá baixar um arquivo chamado “modelo”. Ele estará em formato de arquivo PPTX. Este é o formato
                 padrão de arquivos (de slides de apresentação) salvos no Power Point.
                 <Red> Este formato pode ser aberto em qualquer versão do Power Point.</Red>
             </p>
