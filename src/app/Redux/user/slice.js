@@ -45,9 +45,17 @@ const userSlice = createSlice({
             localStorage.removeItem("userToken");
             state.currentUser = null;
         },
+        updateProfile: (state, action) => {
+            state.currentUser = {
+                ...state.currentUser,
+                usuario_nome: action.payload.usuario_nome,
+                ramais: { ...state.currentUser.ramais, ramal_numero: action.payload.ramal },
+                usuario_aniversario: action.payload.usuario_aniversario,
+            };
+        },
     },
 });
 
-export const { fetchUserData, logoutUser, userNotif } = userSlice.actions;
+export const { fetchUserData, logoutUser, userNotif, updateProfile } = userSlice.actions;
 
 export default userSlice.reducer;

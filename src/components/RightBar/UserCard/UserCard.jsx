@@ -60,9 +60,9 @@ const UserCard = () => {
                 </OverlayTrigger>
             </UserOptionsButton>
             {currentUser?.usuario_img ? (
-                <UserImg src={`/uploads/userimg/${currentUser.usuario_id}.jpg`} />
+                <UserImg src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/userimg/${currentUser.usuario_id}.jpg`} />
             ) : (
-                <UserImg src="/uploads/userimg/default-user-image.png" />
+                <UserImg src="/img/assets/default-user-image.png" />
             )}
 
             <UserText>Bem vindo(a)</UserText>

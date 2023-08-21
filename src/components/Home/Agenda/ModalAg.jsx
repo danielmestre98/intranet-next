@@ -142,7 +142,9 @@ const ModalAg = ({ view, setView, event }) => {
                             <hr />
                             <Button
                                 onClick={() => {
-                                    window.open(`/uploads/agenda/${event?.id_evento}.${event?.arquivo}`);
+                                    window.open(
+                                        `${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/agenda/${event?.id_evento}.${event?.arquivo}`
+                                    );
                                 }}>
                                 Clique aqui para visualizar o anexo
                             </Button>
