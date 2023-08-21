@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import axios from "@/hooks/axiosInstance";
 import { updateProfile } from "@/app/Redux/user/slice";
+import { toast } from "react-toastify";
 
 const validationSchema = yup
     .object({
@@ -34,7 +35,7 @@ const Perfil = () => {
 
     const onSubmit = (data) => {
         axios.post(`/user/profile-update`, data).then(() => {
-            console.log("sucesso");
+            toast.success("Alterações salvas com sucesso!");
             dispatch(updateProfile(data));
         });
     };

@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "@/components/Header/Header";
 import Providers from "./Redux/provider";
 import StyledComponentsRegistry from "./registry";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 export const metadata = {
     title: ":: INTRANET SEDS ::",
@@ -16,6 +18,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="pt-br">
             <body>
+                <ToastContainer autoClose={5000} newestOnTop={true} theme="colored" hideProgressBar={false} />
                 <StyledComponentsRegistry>
                     <Header />
                     <Providers>{children}</Providers>
