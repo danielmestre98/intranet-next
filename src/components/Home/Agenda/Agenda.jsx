@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 import axios from "../../../hooks/axiosInstance";
+import AgendaLoading from "./Load";
 import ModalAg from "./ModalAg";
 import {
     ButtonAgenda,
@@ -25,6 +26,7 @@ const nomeMeses = ["JAN.", "FEV.", "MAR.", "ABR.", "MAI.", "JUN.", "JUL.", "AGO.
 const diasSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
 
 const Agenda = () => {
+    const [loading, setLoading] = useState(true);
     const [modalView, setModalView] = useState(false);
     const [eventoView, setEventoView] = useState();
     const [filters, setFilters] = useState([]);
@@ -42,6 +44,9 @@ const Agenda = () => {
             })
             .catch(() => {
                 toast.error("Falha ao carregar eventos. Entre em contato com o suporte");
+            })
+            .finally(() => {
+                setLoading(false);
             });
         axios
             .get(`/departamentos-drads`)
@@ -64,7 +69,8 @@ const Agenda = () => {
     };
 
     const handlePeriodClick = (e) => {
-        if (e.target.id) {
+        if (e.target.id && e.target.id !== "button-group") {
+            setLoading(true);
             setRadioValue(e.target.id);
             axios
                 .get(`/agenda/home/${e.target.id}`)
@@ -74,6 +80,9 @@ const Agenda = () => {
                 })
                 .catch(() => {
                     toast.error("Falha ao carregar eventos. Entre em contato com o suporte");
+                })
+                .finally(() => {
+                    setLoading(false);
                 });
         }
     };
@@ -150,7 +159,9 @@ const Agenda = () => {
             </RightArrow>
             <hr style={{ marginBottom: "0px" }} />
             <EventsBlock>
-                {filteredEvents && filteredEvents.length > 0 ? (
+                {loading ? (
+                    <AgendaLoading />
+                ) : filteredEvents && filteredEvents.length > 0 ? (
                     filteredEvents.map((event) => {
                         var eventType = ["acao-formativa", "evento-comum", "feriado"];
                         const day = new Date(event.dia_evento.replace(/-/g, "/"));

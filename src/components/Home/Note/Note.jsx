@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { LinkNote, Timestamp } from "./styles";
 import axios from "../../../hooks/axiosInstance";
 import { toast } from "react-toastify";
+import NoteLoad from "./Load";
 
 const Note = () => {
+    const [loading, setLoading] = useState(true);
     const [recado, setRecado] = useState();
     const [timestamp, setTimestamp] = useState("");
 
@@ -36,6 +38,9 @@ const Note = () => {
                 })
                 .catch(() => {
                     toast.error("Falha ao recuperar recado. Entre em contato com o suporte.");
+                })
+                .finally(() => {
+                    setLoading(false);
                 });
         };
         fetchNote();
@@ -50,8 +55,14 @@ const Note = () => {
     return (
         <>
             <Timestamp>{timestamp}</Timestamp>
-            <b>{recado?.departamento_descricao} informa:</b>
-            <LinkNote href="/recados-importantes" dangerouslySetInnerHTML={{ __html: recado?.descricao }} />
+            {loading ? (
+                <NoteLoad />
+            ) : (
+                <>
+                    <b>{recado?.departamento_descricao} informa:</b>
+                    <LinkNote href="/recados-importantes" dangerouslySetInnerHTML={{ __html: recado?.descricao }} />
+                </>
+            )}
         </>
     );
 };
