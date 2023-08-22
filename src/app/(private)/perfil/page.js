@@ -34,10 +34,15 @@ const Perfil = () => {
     const dispatch = useDispatch();
 
     const onSubmit = (data) => {
-        axios.post(`/user/profile-update`, data).then(() => {
-            toast.success("Alterações salvas com sucesso!");
-            dispatch(updateProfile(data));
-        });
+        axios
+            .post(`/user/profile-update`, data)
+            .then(() => {
+                toast.success("Alterações salvas com sucesso!");
+                dispatch(updateProfile(data));
+            })
+            .catch(() => {
+                toast.error("Erro ao gravar dados, entre em contato com o suporte.");
+            });
     };
 
     return (

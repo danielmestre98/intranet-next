@@ -4,6 +4,7 @@ import { faChevronLeft, faChevronRight, faPlus } from "@fortawesome/free-solid-s
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
+import { toast } from "react-toastify";
 import axios from "../../../hooks/axiosInstance";
 import ModalAg from "./ModalAg";
 import {
@@ -33,13 +34,23 @@ const Agenda = () => {
     const [showArrow, setShowArrow] = useState(false);
 
     useEffect(() => {
-        axios.get(`/agenda/home/today`).then(({ data }) => {
-            setEvents(data);
-            setFilteredEvents(data);
-        });
-        axios.get(`/departamentos-drads`).then(({ data }) => {
-            setFilters(data);
-        });
+        axios
+            .get(`/agenda/home/today`)
+            .then(({ data }) => {
+                setEvents(data);
+                setFilteredEvents(data);
+            })
+            .catch(() => {
+                toast.error("Falha ao carregar eventos. Entre em contato com o suporte");
+            });
+        axios
+            .get(`/departamentos-drads`)
+            .then(({ data }) => {
+                setFilters(data);
+            })
+            .catch(() => {
+                toast.error("Falha ao carregar departamentos. Entre em contato com o suporte");
+            });
     }, []);
 
     const slideRight = () => {
@@ -55,10 +66,15 @@ const Agenda = () => {
     const handlePeriodClick = (e) => {
         if (e.target.id) {
             setRadioValue(e.target.id);
-            axios.get(`/agenda/home/${e.target.id}`).then(({ data }) => {
-                setEvents(data);
-                setFilteredEvents(data);
-            });
+            axios
+                .get(`/agenda/home/${e.target.id}`)
+                .then(({ data }) => {
+                    setEvents(data);
+                    setFilteredEvents(data);
+                })
+                .catch(() => {
+                    toast.error("Falha ao carregar eventos. Entre em contato com o suporte");
+                });
         }
     };
 

@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Birthdays from "./Birthdays/Birthdays";
+import { toast } from "react-toastify";
 
 function isValidURL(str) {
     try {
@@ -26,9 +27,14 @@ const RightBar = () => {
     const router = useRouter();
 
     useEffect(() => {
-        axios.get("/tecnicos").then(({ data }) => {
-            setTecnicos(data);
-        });
+        axios
+            .get("/tecnicos")
+            .then(({ data }) => {
+                setTecnicos(data);
+            })
+            .catch(() => {
+                toast.error("Erro ao resgatar técnicos, entre em contato com o suporte.");
+            });
     }, []);
 
     const handleMenuServicoClick = (e) => {
