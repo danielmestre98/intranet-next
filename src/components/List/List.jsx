@@ -10,9 +10,12 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const List = ({ children }) => <ListLinks>{children}</ListLinks>;
 
-const ListItem = ({ children, href, extraText, style }) => (
+const ListItem = ({ children, href, extraText, style, clickableRow }) => (
     <ListItemStyles style={style}>
-        <Link target="_blank" href={href}>
+        <Link
+            style={clickableRow ? { textDecoration: "none", color: "black", display: "block" } : {}}
+            target="_blank"
+            href={href}>
             {children}
         </Link>
         {extraText}

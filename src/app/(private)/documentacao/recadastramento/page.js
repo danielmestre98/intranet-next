@@ -1,3 +1,5 @@
+"use client";
+
 import CardIntranet from "@/components/Card/Card";
 import { List, ListItemDropdown, ListItemDropdownLink } from "@/components/List/List";
 import Link from "next/link";

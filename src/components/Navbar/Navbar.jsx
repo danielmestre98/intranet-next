@@ -67,7 +67,9 @@ const Navbar = () => (
             <NavItem>
                 <RouterLink href="/peas">PEAS</RouterLink>
             </NavItem>
-            <NavItem>Área Restrita</NavItem>
+            <NavItem>
+                <RouterLink href="/area-restrita">Área Restrita</RouterLink>
+            </NavItem>
         </Nav>
     </NavbarIntranet>
 );
