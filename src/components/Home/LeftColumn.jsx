@@ -1,3 +1,5 @@
+"use client";
+
 import { useRouter } from "next/navigation";
 import CardIntranet from "../Card/Card";
 import { HomeDiv, ImageBanner, Justify, YouTube } from "./styles";

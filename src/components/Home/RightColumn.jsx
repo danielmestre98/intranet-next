@@ -1,3 +1,5 @@
+"use client";
+
 import { useRouter } from "next/navigation";
 import CardIntranet from "../Card/Card";
 import Agenda from "./Agenda/Agenda";

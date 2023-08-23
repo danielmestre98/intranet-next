@@ -71,6 +71,7 @@ const AreaRestrita = () => {
                         return (
                             <ListItem
                                 clickableRow
+                                local
                                 key={row?.id_modulo}
                                 href={
                                     row?.url_modulo.search("https://") === -1

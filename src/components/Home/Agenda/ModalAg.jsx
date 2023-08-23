@@ -134,7 +134,7 @@ const ModalAg = ({ view, setView, event }) => {
                             <Form.Control as="textarea" rows={5} disabled defaultValue={event?.descricao} />
                         </Form.Group>
                     </Row>
-                    {event?.arquivo === "" || event?.arquivo === "0" ? (
+                    {event?.arquivo === "" || event?.arquivo === "0" || event?.arquivo === null ? (
                         ""
                     ) : (
                         <>
