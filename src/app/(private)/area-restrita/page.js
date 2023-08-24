@@ -77,7 +77,7 @@ const AreaRestrita = () => {
                                     row?.url_modulo.search("https://") === -1
                                         ? `/area-restrita/${row?.url_modulo}`
                                         : `${row?.url_modulo}/${btoa(
-                                              `${currentUser.usuario_login}/valido/${currentUser.usuario_nome}/${currentUser.usuario_id}`
+                                              `${currentUser?.usuario_login}/valido/${currentUser?.usuario_nome}/${currentUser?.usuario_id}`
                                           )}`
                                 }>
                                 {row?.nome_modulo}
