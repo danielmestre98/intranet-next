@@ -10,6 +10,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-toastify";
 import AgendaLoad from "@/components/Loads/Agenda";
 import AgendaModal from "@/components/Agenda/Modal";
+import { Button } from "react-bootstrap";
+import { useRouter } from "next/navigation";
 
 registerLocale("ptBR", ptBR);
 
@@ -35,6 +37,7 @@ const horarios = [
 ];
 const weekDay = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
 const Agenda = () => {
+    const router = useRouter();
     const [selectedHour, setSelectedHour] = useState("");
     const [events, setEvents] = useState([]);
     const [eventEdit, setEventEdit] = useState(null);
@@ -150,6 +153,7 @@ const Agenda = () => {
                 day={date}
                 setEvents={setEvents}
             />
+            <Button onClick={() => router.push("/area-restrita")}>Voltar</Button>
         </CardIntranet>
     );
 };

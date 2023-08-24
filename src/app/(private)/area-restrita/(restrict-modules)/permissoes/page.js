@@ -6,8 +6,11 @@ import axios from "@/hooks/axiosInstance";
 import Select from "react-select";
 import { toast } from "react-toastify";
 import ListSelect from "@/components/ListSelect/ListSelect";
+import { useRouter } from "next/navigation";
+import { Button } from "react-bootstrap";
 
 const Permissions = () => {
+    const router = useRouter();
     const [users, setUsers] = useState([]);
     const [selectedUser, setSelectedUser] = useState();
 
@@ -35,6 +38,7 @@ const Permissions = () => {
                 menuPortalTarget={document.body}
             />
             <ListSelect user={selectedUser} />
+            <Button onClick={() => router.push("/area-restrita")}>Voltar</Button>
         </CardIntranet>
     );
 };
