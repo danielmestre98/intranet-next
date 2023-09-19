@@ -5,7 +5,7 @@ import UserCard from "./UserCard/UserCard";
 import axios from "../../hooks/axiosInstance";
 import { LinkRecadastramento, MenuServicoesBotao, MenuServicos, Spotify } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faLaptop, faPhoneSquare, faWifi, faWrench } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faEnvelope, faLaptop, faPhoneSquare, faWifi, faWrench } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -105,6 +105,10 @@ const RightBar = () => {
                             size="5x"
                         />
                         <p>Wi-Fi</p>
+                    </MenuServicoesBotao>
+                    <MenuServicoesBotao id="/biblioteca" onClick={handleMenuServicoClick}>
+                        <FontAwesomeIcon icon={faBook} size="5x" />
+                        <p>Biblioteca</p>
                     </MenuServicoesBotao>
                 </MenuServicos>
             </CardIntranet>
