@@ -13,7 +13,9 @@ const RestrictedAreaRoute = ({ children }) => {
     useEffect(() => {
         const currentURL = window.location.href;
         const parts = currentURL.split("/");
-        const permission = parts[parts.length - 1];
+        const index = parts.indexOf("area-restrita");
+        const permission = parts[index + 1];
+        console.log(permission);
         axios
             .get(`/permissions/check/${permission}`)
             .then(({ data }) => {
