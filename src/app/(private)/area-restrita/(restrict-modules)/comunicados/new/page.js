@@ -8,10 +8,12 @@ import axios from "@/hooks/axiosInstance";
 import { toast } from "react-toastify";
 import RichTextEditor from "@/components/RichTextEditor/RichTextEditor";
 import { NavigationButtons } from "./styles";
+import ReactLoading from "react-loading";
 import { useRouter } from "next/navigation";
 
 const NewComunicado = () => {
     const [destinos, setDestinos] = useState([]);
+    const [loading, setLoading] = useState(false);
     const [presetDestino, setPresetDestino] = useState();
     const [sendAsDepartment, setSendAsDepartment] = useState(false);
     const router = useRouter();
@@ -37,10 +39,11 @@ const NewComunicado = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setLoading(true);
         var data = {
             destino: [],
             enviarComoDepto: sendAsDepartment,
-            descricao: document.getElementById("comunicado-html").value,
+            descricao: document.getElementById("rich-text-editor").value,
         };
         if (presetDestino) {
             switch (presetDestino) {
@@ -74,6 +77,9 @@ const NewComunicado = () => {
                 toast.error(
                     "Falha ao criar comunicado, tente novamente. Caso o erro persista entre em contato com o suporte."
                 );
+            })
+            .finally(() => {
+                setLoading(false);
             });
     };
 
@@ -141,7 +147,9 @@ const NewComunicado = () => {
                     <Button onClick={() => router.push("/area-restrita/comunicados")} variant="secondary">
                         Voltar
                     </Button>
-                    <Button type="submit">Salvar</Button>
+                    <Button disabled={loading} type="submit">
+                        {loading ? <ReactLoading type="spin" color="#fff" height={"25px"} width={"25px"} /> : "Salvar"}
+                    </Button>
                 </NavigationButtons>
             </Form>
         </CardIntranet>

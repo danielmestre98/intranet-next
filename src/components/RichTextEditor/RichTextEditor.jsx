@@ -11,7 +11,12 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 import { EditorDiv } from "./styles";
 
-const RichTextEditor = () => {
+const RichTextEditor = ({ disableLink, disableImage }) => {
+    var toolbarOptions = ["inline", "blockType", "fontSize", "textAlign", "colorPicker", "history"];
+
+    if (!disableLink) toolbarOptions.push("link");
+    if (!disableImage) toolbarOptions.push("image");
+
     const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
     const uploadImageCallback = (file) => {
         return new Promise((resolve, reject) => {
@@ -44,16 +49,7 @@ const RichTextEditor = () => {
                     locale: "pt",
                 }}
                 toolbar={{
-                    options: [
-                        "inline",
-                        "blockType",
-                        "fontSize",
-                        "textAlign",
-                        "colorPicker",
-                        "link",
-                        "history",
-                        "image",
-                    ],
+                    options: toolbarOptions,
                     inline: {
                         options: ["bold", "italic", "underline"],
                     },
@@ -77,8 +73,8 @@ const RichTextEditor = () => {
             <textarea
                 hidden
                 readOnly
-                name="comunicado-html"
-                id="comunicado-html"
+                name="rich-text-editor"
+                id="rich-text-editor"
                 cols="30"
                 rows="10"
                 value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}></textarea>
