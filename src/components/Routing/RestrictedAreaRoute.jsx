@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { LoadingDiv } from "./styles";
 import ReactLoading from "react-loading";
+import NoPermission from "../NoPermission/NoPermission";
 
 const RestrictedAreaRoute = ({ children }) => {
     const [permission, setPermission] = useState(false);
@@ -42,7 +43,7 @@ const RestrictedAreaRoute = ({ children }) => {
             ) : permission ? (
                 children
             ) : (
-                "nao permitido"
+                <NoPermission />
             )}
         </>
     );

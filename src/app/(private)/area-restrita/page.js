@@ -19,6 +19,7 @@ const publicModules = [
         url_modulo: "agendamento-sala-da",
         nome_modulo: "Agendamento sala DA",
     },
+    { id_modulo: "1002", url_modulo: "comunicar-exoneracao", nome_modulo: "Comunicar Exoneração" },
 ];
 
 const AreaRestrita = () => {
@@ -66,6 +67,15 @@ const AreaRestrita = () => {
                                     {row?.nome_modulo}
                                 </ListItem>
                             );
+                        }
+                        if (
+                            row.id_modulo === "1002" &&
+                            currentUser.departamento !== "19" &&
+                            currentUser.departamento !== 19 &&
+                            currentUser.departamento !== "20" &&
+                            currentUser.departamento !== 20
+                        ) {
+                            return;
                         }
 
                         return (
