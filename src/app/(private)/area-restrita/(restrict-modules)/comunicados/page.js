@@ -48,6 +48,7 @@ function formatDateTime(inputDateTime) {
 }
 
 const Comunicados = () => {
+    const presetDestinos = ["Todos", "SEDS", "DRADS"];
     const regexImg = /<img.*?>/g;
     const regex = /(<([^>]+)>)/gi;
     const [departamentos, setDepartamentos] = useState([]);
@@ -196,7 +197,13 @@ const Comunicados = () => {
                                 <tr onClick={() => handleRowClick(item)} className="accordion-toggle">
                                     <td dangerouslySetInnerHTML={{ __html: previewDescription }}></td>
                                     <td>{item.comunicado?.users?.departamentos?.departamento_descricao}</td>
-                                    <td>{capitalizeWords(item.destinos)}</td>
+                                    <td>
+                                        {item.comunicado?.destino == 0 ||
+                                        item.comunicado?.destino == 1 ||
+                                        item.comunicado?.destino == 2
+                                            ? presetDestinos[item.comunicado?.destino]
+                                            : capitalizeWords(item.destinos.slice(0, -2))}
+                                    </td>
                                     <td>{formatDateTime(item.comunicado?.create_time)}</td>
                                 </tr>
                                 <tr>
@@ -218,6 +225,7 @@ const Comunicados = () => {
                 {generatePaginationWithEllipsis().map((pageNumber, index) => (
                     <Pagination.Item
                         key={index}
+                        disabled={pageNumber === "..."}
                         active={pageNumber === currentPage}
                         onClick={() => handlePageChange(pageNumber)}>
                         {pageNumber}

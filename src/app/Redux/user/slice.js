@@ -41,6 +41,13 @@ const userSlice = createSlice({
         userNotif: (state, action) => {
             state.currentUser = { ...state.currentUser, notifications: action.payload };
         },
+        removeNotif: (state, action) => {
+            const index = state.currentUser.notifications.findIndex((item) => item.id === action.payload);
+            if (index !== -1) {
+                state.currentUser.notifications.splice(index, 1);
+            }
+        },
+
         logoutUser: (state) => {
             localStorage.removeItem("userToken");
             state.currentUser = null;
@@ -56,6 +63,6 @@ const userSlice = createSlice({
     },
 });
 
-export const { fetchUserData, logoutUser, userNotif, updateProfile } = userSlice.actions;
+export const { fetchUserData, logoutUser, userNotif, updateProfile, removeNotif } = userSlice.actions;
 
 export default userSlice.reducer;

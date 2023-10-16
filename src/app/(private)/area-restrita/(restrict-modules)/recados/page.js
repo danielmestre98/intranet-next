@@ -182,6 +182,7 @@ const Recados = () => {
                 {generatePaginationWithEllipsis().map((pageNumber, index) => (
                     <Pagination.Item
                         key={index}
+                        disabled={pageNumber === "..."}
                         active={pageNumber === currentPage}
                         onClick={() => handlePageChange(pageNumber)}>
                         {pageNumber}
