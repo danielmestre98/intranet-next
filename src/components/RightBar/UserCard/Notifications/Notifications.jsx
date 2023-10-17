@@ -42,7 +42,7 @@ const Notifications = ({ userNotifications, userLogin }) => {
             );
         }
         if (notification.tipo === "comunicado") {
-            router.push(`/comunicados/view/${notification.id}`);
+            router.push(`/comunicados/${notification.id}`);
         }
     };
 
