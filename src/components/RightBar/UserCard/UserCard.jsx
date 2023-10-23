@@ -5,6 +5,7 @@ import CardIntranet from "@/components/Card/Card";
 import { faCog, faCommentDots, faDesktop, faRightFromBracket, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
+import { useRef, useState } from "react";
 import { useEffect } from "react";
 import { OverlayTrigger } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +15,7 @@ import { UserOptionsButton, UserImg, UserText, PopoverOptions, PopoverOptionsBod
 const UserCard = () => {
     const router = useRouter();
     const { currentUser } = useSelector((reducer) => reducer.userReducer);
+    const hiddenDiv = useRef();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -35,9 +37,13 @@ const UserCard = () => {
         router.push("/login");
     };
 
+    const handleClick = () => {
+        hiddenDiv.current.click();
+    };
+
     const popoverOptions = (
         <PopoverOptions>
-            <PopoverOptionsBody>
+            <PopoverOptionsBody onClick={handleClick}>
                 <PopoverOptionsItem href="/perfil">
                     <FontAwesomeIcon icon={faUser} /> Perfil
                 </PopoverOptionsItem>
@@ -56,9 +62,12 @@ const UserCard = () => {
 
     return (
         <CardIntranet style={{ marginBottom: "10px" }} cardBodyStyle={{ padding: "30px", textAlign: "center" }}>
+            <div hidden ref={hiddenDiv}>
+                teste
+            </div>
             <Notifications userNotifications={currentUser?.notifications} userLogin={currentUser?.usuario_login} />
             <UserOptionsButton>
-                <OverlayTrigger trigger="click" rootClose placement="bottom" overlay={popoverOptions}>
+                <OverlayTrigger trigger="click" rootClose={true} placement="bottom" overlay={popoverOptions}>
                     <FontAwesomeIcon size="lg" icon={faCog} />
                 </OverlayTrigger>
             </UserOptionsButton>
