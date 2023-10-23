@@ -64,3 +64,8 @@ body {
 .row {
     margin-bottom: 10px;
 }
+
+.table.chamados > :not(caption) > * > * {
+    color: unset !important;
+    background-color: unset !important;
+}

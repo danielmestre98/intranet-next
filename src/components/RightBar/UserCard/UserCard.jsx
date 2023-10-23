@@ -2,7 +2,7 @@
 
 import { logoutUser, userNotif } from "@/app/Redux/user/slice";
 import CardIntranet from "@/components/Card/Card";
-import { faCog, faCommentDots, faRightFromBracket, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCog, faCommentDots, faDesktop, faRightFromBracket, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -43,6 +43,9 @@ const UserCard = () => {
                 </PopoverOptionsItem>
                 <PopoverOptionsItem href="/comunicados">
                     <FontAwesomeIcon icon={faCommentDots} /> Comunicados
+                </PopoverOptionsItem>
+                <PopoverOptionsItem href="/chamados">
+                    <FontAwesomeIcon icon={faDesktop} /> Meus Chamados
                 </PopoverOptionsItem>
                 <PopoverOptionsItem onClick={handleLogout} href="/logout">
                     <FontAwesomeIcon icon={faRightFromBracket} /> Sair

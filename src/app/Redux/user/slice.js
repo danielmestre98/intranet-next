@@ -48,6 +48,10 @@ const userSlice = createSlice({
             }
         },
 
+        updateRamal: (state, action) => {
+            state.currentUser.ramais.ramal_numero = action.payload;
+        },
+
         logoutUser: (state) => {
             localStorage.removeItem("userToken");
             state.currentUser = null;
@@ -63,6 +67,6 @@ const userSlice = createSlice({
     },
 });
 
-export const { fetchUserData, logoutUser, userNotif, updateProfile, removeNotif } = userSlice.actions;
+export const { fetchUserData, logoutUser, userNotif, updateProfile, removeNotif, updateRamal } = userSlice.actions;
 
 export default userSlice.reducer;
