@@ -16,6 +16,18 @@ export const UserOptionsButton = styled.div`
     }
 `;
 
+export const Baloons = styled.div`
+    position: absolute;
+    bottom: 0;
+
+    img {
+        width: 298px;
+        cursor: auto;
+        z-index: 1;
+        margin-left: -30px;
+    }
+`;
+
 export const UserImg = styled.img`
     width: 130px;
     height: 130px;

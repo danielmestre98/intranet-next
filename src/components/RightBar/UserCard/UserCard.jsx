@@ -10,12 +10,21 @@ import { useEffect } from "react";
 import { OverlayTrigger } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Notifications from "./Notifications/Notifications";
-import { UserOptionsButton, UserImg, UserText, PopoverOptions, PopoverOptionsBody, PopoverOptionsItem } from "./styles";
+import {
+    UserOptionsButton,
+    UserImg,
+    UserText,
+    PopoverOptions,
+    PopoverOptionsBody,
+    PopoverOptionsItem,
+    Baloons,
+} from "./styles";
 
 const UserCard = () => {
     const router = useRouter();
     const { currentUser } = useSelector((reducer) => reducer.userReducer);
     const hiddenDiv = useRef();
+    const [aniversario, setAniversario] = useState(false);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -30,6 +39,22 @@ const UserCard = () => {
             eventSource.close(); // Clean up when component unmounts
         };
     }, [dispatch]);
+
+    useEffect(() => {
+        const checarAniversario = async () => {
+            if (currentUser.usuario_aniversario) {
+                const aniversario = new Date(currentUser.usuario_aniversario.replace(/-/g, "/"));
+                const hoje = new Date();
+                if (aniversario.getDate() + "/" + aniversario.getMonth() === hoje.getDate() + "/" + hoje.getMonth()) {
+                    setAniversario(true);
+                } else {
+                    setAniversario(false);
+                }
+            }
+        };
+        checarAniversario();
+        return () => {};
+    }, [currentUser]);
 
     const handleLogout = (event) => {
         event.preventDefault();
@@ -62,6 +87,13 @@ const UserCard = () => {
 
     return (
         <CardIntranet style={{ marginBottom: "10px" }} cardBodyStyle={{ padding: "30px", textAlign: "center" }}>
+            {aniversario ? (
+                <Baloons>
+                    <img src="/img/assets/aniversario.png" alt="balões" />
+                </Baloons>
+            ) : (
+                ""
+            )}
             <div hidden ref={hiddenDiv}>
                 teste
             </div>
@@ -77,7 +109,7 @@ const UserCard = () => {
                 <UserImg src="/img/assets/default-user-image.png" />
             )}
 
-            <UserText>Bem vindo(a)</UserText>
+            <UserText>{aniversario ? "Parabéns!" : "Bem vindo(a)"}</UserText>
             <UserText> {currentUser?.usuario_nome}</UserText>
         </CardIntranet>
     );

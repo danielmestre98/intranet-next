@@ -47,6 +47,9 @@ const userSlice = createSlice({
                 state.currentUser.notifications.splice(index, 1);
             }
         },
+        updateRecadastramento: (state, action) => {
+            state.currentUser.recadastramento = action.payload;
+        },
 
         updateRamal: (state, action) => {
             state.currentUser.ramais.ramal_numero = action.payload;
@@ -67,6 +70,7 @@ const userSlice = createSlice({
     },
 });
 
-export const { fetchUserData, logoutUser, userNotif, updateProfile, removeNotif, updateRamal } = userSlice.actions;
+export const { fetchUserData, logoutUser, userNotif, updateProfile, removeNotif, updateRamal, updateRecadastramento } =
+    userSlice.actions;
 
 export default userSlice.reducer;
