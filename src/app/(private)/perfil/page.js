@@ -48,7 +48,7 @@ const Perfil = () => {
     return (
         <CardIntranet bigTitle cardTitle="Perfil">
             <ProfileDiv>
-                <ProfileImg>
+                <ProfileImg className="image-div">
                     <img
                         src={
                             currentUser?.usuario_img

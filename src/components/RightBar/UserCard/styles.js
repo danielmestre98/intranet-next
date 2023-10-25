@@ -16,6 +16,14 @@ export const UserOptionsButton = styled.div`
     }
 `;
 
+export const HiddenDiv = styled.div`
+    position: absolute;
+    height: 136px;
+    width: 156px;
+    margin-left: 173px;
+    margin-top: 16px;
+`;
+
 export const Baloons = styled.div`
     position: absolute;
     bottom: 0;

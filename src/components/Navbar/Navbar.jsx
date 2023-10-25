@@ -67,7 +67,7 @@ const Navbar = () => (
             <NavItem>
                 <RouterLink href="/peas">PEAS</RouterLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="botao-area-restrita">
                 <RouterLink href="/area-restrita">Área Restrita</RouterLink>
             </NavItem>
         </Nav>

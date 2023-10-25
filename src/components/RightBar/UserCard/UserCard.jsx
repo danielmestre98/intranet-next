@@ -18,6 +18,7 @@ import {
     PopoverOptionsBody,
     PopoverOptionsItem,
     Baloons,
+    HiddenDiv,
 } from "./styles";
 
 const UserCard = () => {
@@ -67,7 +68,7 @@ const UserCard = () => {
     };
 
     const popoverOptions = (
-        <PopoverOptions>
+        <PopoverOptions className="menu-user">
             <PopoverOptionsBody onClick={handleClick}>
                 <PopoverOptionsItem href="/perfil">
                     <FontAwesomeIcon icon={faUser} /> Perfil
@@ -86,7 +87,10 @@ const UserCard = () => {
     );
 
     return (
-        <CardIntranet style={{ marginBottom: "10px" }} cardBodyStyle={{ padding: "30px", textAlign: "center" }}>
+        <CardIntranet
+            className="user-card"
+            style={{ marginBottom: "10px" }}
+            cardBodyStyle={{ padding: "30px", textAlign: "center" }}>
             {aniversario ? (
                 <Baloons>
                     <img src="/img/assets/aniversario.png" alt="balões" />
@@ -98,11 +102,12 @@ const UserCard = () => {
                 teste
             </div>
             <Notifications userNotifications={currentUser?.notifications} userLogin={currentUser?.usuario_login} />
-            <UserOptionsButton>
-                <OverlayTrigger trigger="click" rootClose={true} placement="bottom" overlay={popoverOptions}>
+            <OverlayTrigger trigger="click" rootClose={true} placement="bottom" overlay={popoverOptions}>
+                <UserOptionsButton id="menu-user">
                     <FontAwesomeIcon size="lg" icon={faCog} />
-                </OverlayTrigger>
-            </UserOptionsButton>
+                </UserOptionsButton>
+            </OverlayTrigger>
+            <HiddenDiv className="hidden-menu" />
             {currentUser?.usuario_img ? (
                 <UserImg src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/userimg/${currentUser.usuario_id}.jpg`} />
             ) : (

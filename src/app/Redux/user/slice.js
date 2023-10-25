@@ -1,6 +1,7 @@
 "use client";
 
 import { createSlice } from "@reduxjs/toolkit";
+import axios from "@/hooks/axiosInstance";
 
 /**
  * estrutura padrão do usuário:
@@ -55,6 +56,11 @@ const userSlice = createSlice({
             state.currentUser.ramais.ramal_numero = action.payload;
         },
 
+        completeTutorial: (state, action) => {
+            state.currentUser.tutorial = 1;
+            axios.post("/user/tutorial");
+        },
+
         logoutUser: (state) => {
             localStorage.removeItem("userToken");
             state.currentUser = null;
@@ -70,7 +76,15 @@ const userSlice = createSlice({
     },
 });
 
-export const { fetchUserData, logoutUser, userNotif, updateProfile, removeNotif, updateRamal, updateRecadastramento } =
-    userSlice.actions;
+export const {
+    fetchUserData,
+    logoutUser,
+    userNotif,
+    updateProfile,
+    removeNotif,
+    updateRamal,
+    updateRecadastramento,
+    completeTutorial,
+} = userSlice.actions;
 
 export default userSlice.reducer;

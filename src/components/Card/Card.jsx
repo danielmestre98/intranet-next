@@ -3,9 +3,9 @@
 import { Card } from "react-bootstrap";
 import { CardHeader, CardOuter } from "./styles";
 
-const CardIntranet = ({ children, cardTitle, style, cardBodyStyle, cardHeaderStyle, bigTitle }) => {
+const CardIntranet = ({ children, cardTitle, style, cardBodyStyle, cardHeaderStyle, bigTitle, className }) => {
     return (
-        <CardOuter style={style}>
+        <CardOuter className={className} style={style}>
             {cardTitle ? (
                 <CardHeader className={bigTitle ? "display-4" : ""} style={cardHeaderStyle}>
                     <div>{cardTitle}</div>
