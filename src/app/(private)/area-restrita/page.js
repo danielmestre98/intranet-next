@@ -70,10 +70,10 @@ const AreaRestrita = () => {
                         }
                         if (
                             row.id_modulo === "1002" &&
-                            currentUser.departamento !== "19" &&
-                            currentUser.departamento !== 19 &&
-                            currentUser.departamento !== "20" &&
-                            currentUser.departamento !== 20
+                            currentUser?.departamento !== "19" &&
+                            currentUser?.departamento !== 19 &&
+                            currentUser?.departamento !== "20" &&
+                            currentUser?.departamento !== 20
                         ) {
                             return;
                         }

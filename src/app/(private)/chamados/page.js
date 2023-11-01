@@ -114,14 +114,14 @@ const Chamados = () => {
         if (row.tipo === "Suporte") {
             window.open(
                 `http://10.22.0.38:83/redesocial/?lnk=helpdesk&view=detalhamento&id=${btoa(row.chamado_id)}&l=${btoa(
-                    currentUser.usuario_login
+                    currentUser?.usuario_login
                 )}`,
                 "_blank"
             );
         } else {
             window.open(
                 `http://10.22.0.38:83/redesocial/?lnk=manutencao&view=detalhamento&id=${btoa(row.chamado_id)}&l=${btoa(
-                    currentUser.usuario_login
+                    currentUser?.usuario_login
                 )}`,
                 "_blank"
             );

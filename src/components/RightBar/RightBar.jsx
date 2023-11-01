@@ -69,7 +69,7 @@ const RightBar = () => {
                         onClick={handleMenuServicoClick}
                         id={
                             tecnicos.suporte?.includes(currentUser?.usuario_login?.toLowerCase())
-                                ? `http://10.22.0.38:83/redesocial/?lnk=helpdesk&view=home&l=${currentUser.usuario_login}`
+                                ? `http://10.22.0.38:83/redesocial/?lnk=helpdesk&view=home&l=${currentUser?.usuario_login}`
                                 : "/chamados/novo-chamado"
                         }>
                         <FontAwesomeIcon icon={faLaptop} size="5x" />
@@ -80,7 +80,7 @@ const RightBar = () => {
                         onClick={handleMenuServicoClick}
                         id={
                             tecnicos.manutencao?.includes(currentUser?.usuario_login?.toLowerCase())
-                                ? `http://10.22.0.38:83/redesocial/?lnk=manutencao&view=chamados&l=${currentUser.usuario_login}`
+                                ? `http://10.22.0.38:83/redesocial/?lnk=manutencao&view=chamados&l=${currentUser?.usuario_login}`
                                 : "/chamados/novo-chamado-manut"
                         }>
                         <FontAwesomeIcon icon={faWrench} size="5x" />

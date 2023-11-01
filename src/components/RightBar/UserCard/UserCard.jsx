@@ -30,7 +30,7 @@ const UserCard = () => {
 
     useEffect(() => {
         const eventSource = new EventSource(
-            `${process.env.NEXT_PUBLIC_API_URL}/notifications-sse?token=${currentUser.login_token}`
+            `${process.env.NEXT_PUBLIC_API_URL}/notifications-sse?token=${currentUser?.login_token}`
         );
         eventSource.onmessage = async (event) => {
             const notificationData = JSON.parse(event.data);
@@ -39,12 +39,12 @@ const UserCard = () => {
         return () => {
             eventSource.close(); // Clean up when component unmounts
         };
-    }, [dispatch]);
+    }, [dispatch, currentUser]);
 
     useEffect(() => {
         const checarAniversario = async () => {
-            if (currentUser.usuario_aniversario) {
-                const aniversario = new Date(currentUser.usuario_aniversario.replace(/-/g, "/"));
+            if (currentUser?.usuario_aniversario) {
+                const aniversario = new Date(currentUser?.usuario_aniversario.replace(/-/g, "/"));
                 const hoje = new Date();
                 if (aniversario.getDate() + "/" + aniversario.getMonth() === hoje.getDate() + "/" + hoje.getMonth()) {
                     setAniversario(true);
@@ -109,7 +109,9 @@ const UserCard = () => {
             </OverlayTrigger>
             <HiddenDiv className="hidden-menu" />
             {currentUser?.usuario_img ? (
-                <UserImg src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/userimg/${currentUser.usuario_id}.jpg`} />
+                <UserImg
+                    src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/userimg/${currentUser?.usuario_id}.jpg`}
+                />
             ) : (
                 <UserImg src="/img/assets/default-user-image.png" />
             )}
