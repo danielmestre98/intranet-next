@@ -25,7 +25,7 @@ const Note = () => {
                         setTimestamp(`Atualizado hoje às ${updated.getHours()}:${updated.getMinutes()}`);
                     } else {
                         setTimestamp(
-                            `Atualizado em: ${updated.getDate()}/${("0" + updated.getMonth()).slice(
+                            `Atualizado em: ${("0" + updated.getDate()).slice(-2)}/${("0" + updated.getMonth()).slice(
                                 -2
                             )}/${updated.getFullYear()} às ${updated.getHours()}:${updated.getMinutes()}`
                         );

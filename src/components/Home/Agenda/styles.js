@@ -136,6 +136,7 @@ export const EventContainer = styled.div`
 export const DayBlock = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 15%;
     margin-left: 10px;
     margin-right: 10px;
@@ -143,6 +144,7 @@ export const DayBlock = styled.div`
     border-radius: 10px;
     margin-top: 2.5px;
     margin-bottom: 2.5px;
+    padding-bottom: 5px;
 
     .dia {
         font-size: 20px;
