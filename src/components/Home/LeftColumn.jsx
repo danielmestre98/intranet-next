@@ -29,6 +29,14 @@ const LeftColumn = () => {
             <CardIntranet>
                 <YouTube src="https://www.youtube.com/embed/?listType=user_uploads&list=socialsaopaulo&showinfo=1&theme=light" />
             </CardIntranet>
+            <CardIntranet>
+                <ImageBanner
+                    onClick={() =>
+                        handleBannerClick("/documents/home/CARTAZ A3 P&B- INTEGRIDADE PÚBLICA_FINAL (2).pdf", true)
+                    }>
+                    <img src="/img/home-banners/anticorrupcao.png" alt="..." />
+                </ImageBanner>
+            </CardIntranet>
             <CardIntranet cardTitle="INFORME nº 01/2023">
                 <Justify>
                     <b>Controle Interno</b>

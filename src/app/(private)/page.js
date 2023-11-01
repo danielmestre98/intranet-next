@@ -7,8 +7,8 @@ import { PagesHome } from "./styles";
 export default function Home() {
     return (
         <PagesHome>
-            <LeftColumn></LeftColumn>
-            <RightColumn></RightColumn>
+            <LeftColumn />
+            <RightColumn />
         </PagesHome>
     );
 }

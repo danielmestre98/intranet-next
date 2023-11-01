@@ -147,9 +147,7 @@ const IdentidadeVisual = () => {
                 </ListItemDropdown>
 
                 <ListItemDropdown buttonName="Guia de fachadas CCI e CDI">
-                    <ListItemDropdownLink
-                        toBlank
-                        href="/documents/identvisual/Guia de Fachadas SP Amigo do Idoso - final 2019.pdf">
+                    <ListItemDropdownLink toBlank href="/documents/identvisual/GUIA CCI CDI _ 2023.pptx">
                         Guia de fachadas CCI e CDI
                     </ListItemDropdownLink>
                     <ListItemDropdownLink toBlank href="/documents/identvisual/CENTRO DIA.rar">

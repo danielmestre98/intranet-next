@@ -31,6 +31,12 @@ const RightColumn = () => {
             <CardIntranet cardBodyStyle={{ padding: "0px" }} style={{ height: "400px" }}>
                 <Agenda />
             </CardIntranet>
+            <CardIntranet>
+                <ImageBanner
+                    onClick={() => handleBannerClick("/documents/home/_Folder Integridade _FINAL (1).pdf", true)}>
+                    <img src="/img/home-banners/integridade.png" alt="..." />
+                </ImageBanner>
+            </CardIntranet>
             <CardIntranet cardTitle="Recados Importantes" style={{ height: "674.5px" }}>
                 <Note />
             </CardIntranet>
