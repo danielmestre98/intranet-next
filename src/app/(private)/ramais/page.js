@@ -149,7 +149,9 @@ const Ramais = () => {
                     <FormSelect id="departamento" onChange={handleSearch} ref={searchDepto}>
                         <option value="">Selecione o departamento...</option>
                         {departamentos?.map((departamento) => (
-                            <option value={departamento}>{departamento}</option>
+                            <option key={departamento} value={departamento}>
+                                {departamento}
+                            </option>
                         ))}
                     </FormSelect>
                 </Col>
@@ -158,7 +160,7 @@ const Ramais = () => {
             <RamaisDiv>
                 {currentItems.map((item) => {
                     return (
-                        <RamalCard>
+                        <RamalCard key={item.usuario_id}>
                             <div className="user-img">
                                 <img
                                     src={

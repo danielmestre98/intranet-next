@@ -67,7 +67,7 @@ const ComunicarExoneracao = () => {
             <Row>
                 <p style={{ margin: "0" }}>
                     Escolha o nome da pessoa para solicitar a inativação dela nos sistemas internos. (Após solicitado
-                    será aberto um chamado que você poderá encontrar em "Meus chamados")
+                    será aberto um chamado que você poderá encontrar em &quot;Meus chamados&quot;)
                 </p>
             </Row>
             <Form onSubmit={handleSubmit(onSubmit)}>

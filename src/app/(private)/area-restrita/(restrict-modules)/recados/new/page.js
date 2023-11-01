@@ -18,7 +18,6 @@ const NewRecado = () => {
         setLoading(true);
         e.preventDefault();
         const recadosText = document.getElementById("rich-text-editor").value;
-        console.log(recadosText);
         axios
             .post("/notes/new", { descricao: recadosText })
             .then(() => {

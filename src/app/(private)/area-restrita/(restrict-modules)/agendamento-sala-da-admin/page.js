@@ -78,7 +78,7 @@ const AgendaSalaDaAdmin = () => {
     };
     useEffect(() => {
         fetchEventos();
-    }, [date]);
+    }, [date, fetchEventos]);
 
     const handleDateChange = (date) => {
         setDate(date);

@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { convertToRaw, EditorState } from "draft-js";
-import { Editor } from "react-draft-wysiwyg";
 import draftToHtml from "draftjs-to-html";
+import dynamic from "next/dynamic";
 import axios from "@/hooks/axiosInstance";
+const Editor = dynamic(() => import("react-draft-wysiwyg").then((mod) => mod.Editor), { ssr: false });
 
 import "draft-js/dist/Draft.css";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";

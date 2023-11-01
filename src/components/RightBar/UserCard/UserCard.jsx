@@ -5,7 +5,7 @@ import CardIntranet from "@/components/Card/Card";
 import { faCog, faCommentDots, faDesktop, faRightFromBracket, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useEffect } from "react";
 import { OverlayTrigger } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,7 +28,7 @@ const UserCard = () => {
     const [aniversario, setAniversario] = useState(false);
     const dispatch = useDispatch();
 
-    useEffect(() => {
+    useMemo(() => {
         const eventSource = new EventSource(
             `${process.env.NEXT_PUBLIC_API_URL}/notifications-sse?token=${currentUser?.login_token}`
         );
@@ -39,7 +39,7 @@ const UserCard = () => {
         return () => {
             eventSource.close(); // Clean up when component unmounts
         };
-    }, [dispatch, currentUser]);
+    }, [dispatch, currentUser?.login_token]);
 
     useEffect(() => {
         const checarAniversario = async () => {
