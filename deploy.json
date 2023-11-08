@@ -1,0 +1,11 @@
+{
+    "apps" : [{
+        "name" : "intranet-next",
+        "script" : "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+        "args": "run start",
+        "instances": 1,
+        "env":{
+            "PORT": "3000"
+        }
+}]
+}
