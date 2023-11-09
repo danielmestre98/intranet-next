@@ -51,8 +51,8 @@ const Birthdays = () => {
                                     <ImgBirthday
                                         src={
                                             element.usuario_img == 1
-                                                ? `/uploads/userimg/${element.usuario_id}.jpg`
-                                                : "/uploads/userimg/default-user-image.png"
+                                                ? `${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/userimg/${element.usuario_id}.jpg`
+                                                : "/img/assets/default-user-image.png"
                                         }
                                         alt="..."
                                     />
