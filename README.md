@@ -23,7 +23,7 @@ Para criar o primeiro processo do PM2 utiliza o arquivo "deploy.json", lá é pa
 Rodar o servidor de produção:
 
 ```bash
-    # o prompt de comando precisa estar executando esse código na pasta do projecto
+    # o prompt de comando precisa estar executando esse código na pasta do projeto
 
     # pela primeira vez
     pm2 start deploy.json
