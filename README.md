@@ -6,7 +6,6 @@
 -   Feedback de erros colocados em todas as requisições;
 -   Melhorado estrutura de código para seguir o padrão clean code;
 -   Utilizado framework NextJS para criação do projeto ReactJS;
--   Framework Backend laravel utilizando API para requests;
 -   Melhorias na interface e correção de diversos bugs menores.
 
 ## Deployment
