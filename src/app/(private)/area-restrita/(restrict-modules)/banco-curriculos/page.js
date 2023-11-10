@@ -10,6 +10,7 @@ import { PdfImage, TableControls, Table, NoRegistryFound } from "./styles";
 import CurriculosModal from "@/components/Curriculos/Modal";
 import { toast } from "react-toastify";
 import ReactLoading from "react-loading";
+import { useRouter } from "next/navigation";
 
 const BancoCurriculos = () => {
     const [loading, setLoading] = useState(true);
@@ -19,6 +20,7 @@ const BancoCurriculos = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(10);
     const searchBox = useRef(null);
+    const router = useRouter();
 
     useEffect(() => {
         axios
@@ -220,6 +222,7 @@ const BancoCurriculos = () => {
                     />
                     <Pagination.Last onClick={() => handlePageChange(totalPages)} />
                 </Pagination>
+                <Button onClick={() => router.push("/area-restrita")}>Voltar</Button>
             </CardIntranet>
             <CurriculosModal setCurriculos={setTableData} setView={setModalView} view={modalView} />
         </>

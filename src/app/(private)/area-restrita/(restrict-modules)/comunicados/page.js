@@ -237,6 +237,7 @@ const Comunicados = () => {
                 />
                 <Pagination.Last onClick={() => handlePageChange(totalPages)} />
             </Pagination>
+            <Button onClick={() => router.push("/area-restrita")}>Voltar</Button>
         </CardIntranet>
     );
 };

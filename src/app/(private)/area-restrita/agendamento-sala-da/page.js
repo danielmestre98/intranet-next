@@ -59,6 +59,7 @@ const AgendaSalaDa = () => {
     const [modalView, setModalView] = useState(false);
     const [loading, setLoading] = useState(true);
     const [date, setDate] = useState(new Date());
+    const router = useRouter();
 
     const fetchEventos = () => {
         setLoading(true);
