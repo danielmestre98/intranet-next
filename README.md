@@ -1,4 +1,4 @@
-## Intranet versão 2.0
+## Intranet SEDS v2.0
 
 -   Melhora no carregamento de páginas e feedback para o usuário de processamento do servidor;
 -   Correção de bug na parte de notificações, onde o mesmo não mostrava corretamente quando existiam notificações novas;
