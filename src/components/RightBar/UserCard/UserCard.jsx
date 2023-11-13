@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { OverlayTrigger } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Notifications from "./Notifications/Notifications";
+import axios from "@/hooks/axiosInstance";
 import {
     UserOptionsButton,
     UserImg,
@@ -20,6 +21,7 @@ import {
     Baloons,
     HiddenDiv,
 } from "./styles";
+import { toast } from "react-toastify";
 
 const UserCard = () => {
     const router = useRouter();
@@ -28,18 +30,30 @@ const UserCard = () => {
     const [aniversario, setAniversario] = useState(false);
     const dispatch = useDispatch();
 
-    // useMemo(() => {
-    //     const eventSource = new EventSource(
-    //         `${process.env.NEXT_PUBLIC_API_URL}/notifications-sse?token=${currentUser?.login_token}`
-    //     );
-    //     eventSource.onmessage = async (event) => {
-    //         const notificationData = JSON.parse(event.data);
-    //         dispatch(userNotif(notificationData));
-    //     };
-    //     return () => {
-    //         eventSource.close(); // Clean up when component unmounts
-    //     };
-    // }, [dispatch, currentUser?.login_token]);
+    useEffect(() => {
+        const fetchNotifications = async () => {
+            axios
+                .get("/notifications")
+                .then(({ data }) => {
+                    dispatch(userNotif(data));
+                })
+                .catch(() => {
+                    toast.error("Falha ao recuperar notificações");
+                });
+        };
+
+        if (currentUser?.login_token) {
+            fetchNotifications();
+        }
+
+        // Intervalo entre busca de notificações
+        const intervalId = setInterval(() => {
+            fetchNotifications();
+        }, 60000);
+
+        // Clean up the interval when the component is unmounted
+        return () => clearInterval(intervalId);
+    }, [dispatch, currentUser?.login_token]);
 
     useEffect(() => {
         const checarAniversario = async () => {
