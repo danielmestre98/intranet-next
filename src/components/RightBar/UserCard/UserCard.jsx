@@ -28,18 +28,18 @@ const UserCard = () => {
     const [aniversario, setAniversario] = useState(false);
     const dispatch = useDispatch();
 
-    useMemo(() => {
-        const eventSource = new EventSource(
-            `${process.env.NEXT_PUBLIC_API_URL}/notifications-sse?token=${currentUser?.login_token}`
-        );
-        eventSource.onmessage = async (event) => {
-            const notificationData = JSON.parse(event.data);
-            dispatch(userNotif(notificationData));
-        };
-        return () => {
-            eventSource.close(); // Clean up when component unmounts
-        };
-    }, [dispatch, currentUser?.login_token]);
+    // useMemo(() => {
+    //     const eventSource = new EventSource(
+    //         `${process.env.NEXT_PUBLIC_API_URL}/notifications-sse?token=${currentUser?.login_token}`
+    //     );
+    //     eventSource.onmessage = async (event) => {
+    //         const notificationData = JSON.parse(event.data);
+    //         dispatch(userNotif(notificationData));
+    //     };
+    //     return () => {
+    //         eventSource.close(); // Clean up when component unmounts
+    //     };
+    // }, [dispatch, currentUser?.login_token]);
 
     useEffect(() => {
         const checarAniversario = async () => {
