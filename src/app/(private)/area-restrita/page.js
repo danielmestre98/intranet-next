@@ -63,7 +63,7 @@ const AreaRestrita = () => {
                                 <ListItem
                                     clickableRow
                                     key={row?.id_modulo}
-                                    href={row.url_modulo + localStorage.getItem("userToken")}>
+                                    href={row.url_modulo + currentUser?.login_token}>
                                     {row?.nome_modulo}
                                 </ListItem>
                             );
