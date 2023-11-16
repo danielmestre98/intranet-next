@@ -43,7 +43,7 @@ const Agenda = () => {
                 setFilteredEvents(data);
             })
             .catch(() => {
-                // toast.error("Falha ao carregar eventos. Entre em contato com o suporte");
+                toast.error("Falha ao carregar eventos. Entre em contato com o suporte");
             })
             .finally(() => {
                 setLoading(false);
@@ -54,7 +54,7 @@ const Agenda = () => {
                 setFilters(data);
             })
             .catch(() => {
-                // toast.error("Falha ao carregar departamentos. Entre em contato com o suporte");
+                toast.error("Falha ao carregar departamentos. Entre em contato com o suporte");
             });
     }, []);
 
@@ -79,7 +79,7 @@ const Agenda = () => {
                     setFilteredEvents(data);
                 })
                 .catch(() => {
-                    // toast.error("Falha ao carregar eventos. Entre em contato com o suporte");
+                    toast.error("Falha ao carregar eventos. Entre em contato com o suporte");
                 })
                 .finally(() => {
                     setLoading(false);
