@@ -2,7 +2,14 @@
 
 import { logoutUser, userNotif } from "@/app/Redux/user/slice";
 import CardIntranet from "@/components/Card/Card";
-import { faCog, faCommentDots, faDesktop, faRightFromBracket, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+    faCog,
+    faCommentDots,
+    faDesktop,
+    faFileLines,
+    faRightFromBracket,
+    faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
 import { useMemo, useRef, useState } from "react";
@@ -20,6 +27,7 @@ import {
     PopoverOptionsItem,
     Baloons,
     HiddenDiv,
+    IconsMenu,
 } from "./styles";
 import { toast } from "react-toastify";
 
@@ -85,16 +93,21 @@ const UserCard = () => {
         <PopoverOptions className="menu-user">
             <PopoverOptionsBody onClick={handleClick}>
                 <PopoverOptionsItem href="/perfil">
-                    <FontAwesomeIcon icon={faUser} /> Perfil
+                    <IconsMenu icon={faUser} /> Perfil
                 </PopoverOptionsItem>
                 <PopoverOptionsItem href="/comunicados">
-                    <FontAwesomeIcon icon={faCommentDots} /> Comunicados
+                    <IconsMenu icon={faCommentDots} /> Comunicados
                 </PopoverOptionsItem>
                 <PopoverOptionsItem href="/chamados">
-                    <FontAwesomeIcon icon={faDesktop} /> Meus Chamados
+                    <IconsMenu icon={faDesktop} /> Meus Chamados
+                </PopoverOptionsItem>
+                <PopoverOptionsItem
+                    href={`https://portal.seds.sp.gov.br/formularios/meus-formularios/${currentUser?.login_token}`}
+                    target="_blank">
+                    <IconsMenu icon={faFileLines} /> Meus Formulários
                 </PopoverOptionsItem>
                 <PopoverOptionsItem onClick={handleLogout} href="/logout">
-                    <FontAwesomeIcon icon={faRightFromBracket} /> Sair
+                    <IconsMenu icon={faRightFromBracket} /> Sair
                 </PopoverOptionsItem>
             </PopoverOptionsBody>
         </PopoverOptions>

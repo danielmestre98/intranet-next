@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { Popover } from "react-bootstrap";
 import { styled } from "styled-components";
@@ -14,6 +15,10 @@ export const UserOptionsButton = styled.div`
         cursor: pointer;
         color: #133654;
     }
+`;
+
+export const IconsMenu = styled(FontAwesomeIcon)`
+    width: 20px;
 `;
 
 export const HiddenDiv = styled.div`
