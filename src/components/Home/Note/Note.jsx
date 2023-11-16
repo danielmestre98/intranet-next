@@ -37,7 +37,7 @@ const Note = () => {
                     setRecado(data);
                 })
                 .catch(() => {
-                    toast.error("Falha ao recuperar recado. Entre em contato com o suporte.");
+                    // toast.error("Falha ao recuperar recado. Entre em contato com o suporte.");
                 })
                 .finally(() => {
                     setLoading(false);

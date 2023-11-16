@@ -33,7 +33,7 @@ const RightBar = () => {
                 setTecnicos(data);
             })
             .catch(() => {
-                toast.error("Erro ao resgatar técnicos, entre em contato com o suporte.");
+                // toast.error("Erro ao resgatar técnicos, entre em contato com o suporte.");
             });
     }, []);
 
