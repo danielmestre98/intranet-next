@@ -108,7 +108,7 @@ const NovoChamadoSuporte = () => {
                             <Form.Label>Ramal / Telefone</Form.Label>
                             <Form.Control
                                 isInvalid={errors.ramal}
-                                defaultValue={currentUser?.ramais.ramal_numero}
+                                defaultValue={currentUser?.ramais?.ramal_numero}
                                 {...register("ramal")}
                             />
                         </Form.Group>
