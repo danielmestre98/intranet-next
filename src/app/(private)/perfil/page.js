@@ -52,7 +52,9 @@ const Perfil = () => {
                     <img
                         src={
                             currentUser?.usuario_img
-                                ? `${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/userimg/${currentUser.usuario_id}.jpg`
+                                ? `${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/userimg/${
+                                      currentUser.usuario_id
+                                  }.jpg?hash=${btoa(Math.random() * 100)}`
                                 : "/img/assets/default-user-image.png"
                         }
                         alt="..."

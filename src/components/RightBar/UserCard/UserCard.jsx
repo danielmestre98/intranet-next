@@ -137,7 +137,9 @@ const UserCard = () => {
             <HiddenDiv className="hidden-menu" />
             {currentUser?.usuario_img ? (
                 <UserImg
-                    src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/userimg/${currentUser?.usuario_id}.jpg`}
+                    src={`${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/userimg/${
+                        currentUser?.usuario_id
+                    }.jpg?hash=${btoa(Math.random() * 100)}`}
                 />
             ) : (
                 <UserImg src="/img/assets/default-user-image.png" />
