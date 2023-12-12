@@ -401,7 +401,7 @@ const Drh = () => {
         setModalView(true);
     };
 
-    const handleFileClick = (item, selectedItem) => {
+    const handleFileClick = (item) => {
         if (selectedItem.id === 7) {
             window.open(`${curriculosPath}${item.path}`, "_blank");
         } else {
@@ -458,7 +458,7 @@ const Drh = () => {
                                         <div
                                             key={item.path}
                                             title={item.displayName}
-                                            onClick={() => handleFileClick(item, selectedItem)}>
+                                            onClick={() => handleFileClick(item)}>
                                             <FontAwesomeIcon size="4x" icon={iconTypes[item.icon]} />
                                             <p>
                                                 {item.displayName.length > 36
@@ -485,7 +485,7 @@ const Drh = () => {
                                                     <div
                                                         key={item.path}
                                                         title={item.displayName}
-                                                        onClick={() => handleFileClick(item.path)}>
+                                                        onClick={() => handleFileClick(item)}>
                                                         <FontAwesomeIcon size="4x" icon={iconTypes[item.icon]} />
                                                         <p>
                                                             {item.displayName.length > 34
