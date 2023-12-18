@@ -46,7 +46,7 @@ const UserCard = () => {
                     dispatch(userNotif(data));
                 })
                 .catch(() => {
-                    toast.error("Falha ao recuperar notificações");
+                    // toast.error("Falha ao recuperar notificações");
                 });
         };
 
