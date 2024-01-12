@@ -18,7 +18,7 @@ const Edesp = () => {
                         rel="noreferrer"
                         href="/documents/edesp/PLANO DE ATIVAÇÃO DE AÇÃO FORMATIVA ON-LINE.docx">
                         {" "}
-                        Plano de Ação Formativa On-line
+                        Solicitação de Capacitação On-line
                     </a>
                 </li>
                 <li>
@@ -27,13 +27,13 @@ const Edesp = () => {
                         target="_blank"
                         rel="noreferrer"
                         href="/documents/edesp/PLANO DE ATIVAÇÃO DE AÇÃO FORMATIVA PRESENCIAL.docx">
-                        Plano de Ação Formativa Presencial
+                        Solicitação de Capacitação Presencial
                     </a>
                 </li>
             </ul>
             <h3>Aula Virtual ou Videoaula</h3>
             <ul>
-                <li>
+                {/* <li>
                     <a
                         target="_blank"
                         rel="noreferrer"
@@ -83,11 +83,11 @@ const Edesp = () => {
                         href="/documents/edesp/Arq 6 – PRODUÇÃO DE VIDEOAULA SEM ESTÚDIO E SET DE FILMAGEM.pdf">
                         Arq 6 – Produção de Videoaulas sem Estúdio e Set de Filmagem.
                     </a>
-                </li>
+                </li> */}
                 <li>
                     Link de Modelo de Videoaula:{" "}
                     <a target="_blank" rel="noreferrer" href="https://youtu.be/YbyI0_CR7Gc">
-                        https://youtu.be/YbyI0_CR7Gc
+                        https://www.youtube.com/@edespsocial
                     </a>
                 </li>
             </ul>
