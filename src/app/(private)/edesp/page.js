@@ -86,7 +86,7 @@ const Edesp = () => {
                 </li> */}
                 <li>
                     Link de Modelo de Videoaula:{" "}
-                    <a target="_blank" rel="noreferrer" href="https://youtu.be/YbyI0_CR7Gc">
+                    <a target="_blank" rel="noreferrer" href=" https://www.youtube.com/@edespsocial">
                         https://www.youtube.com/@edespsocial
                     </a>
                 </li>
