@@ -4,7 +4,7 @@ import CardIntranet from "@/components/Card/Card";
 import { useEffect, useState, useRef } from "react";
 import axios from "@/hooks/axiosInstance";
 import { toast } from "react-toastify";
-import { ComunicadosItem, ComunicadosList } from "./styles";
+import { ComunicadosItem, ComunicadosList, NenhumComunicado } from "./styles";
 import { Pagination } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
@@ -185,6 +185,17 @@ const Comunicados = () => {
         <CardIntranet cardTitle={"Comunicados"} bigTitle>
             <ComunicadosList>
                 {!loading || <ComunicadosLoad />}
+                {!loading ? (
+                    currentItems.length > 0 ? (
+                        ""
+                    ) : (
+                        <NenhumComunicado>
+                            <span className="lead">Nenhum comunicado encontrado</span>
+                        </NenhumComunicado>
+                    )
+                ) : (
+                    ""
+                )}
                 {currentItems.map((item) => {
                     var previewDescription = item.descricao.replace(regexImg, "[Imagem]");
                     previewDescription = previewDescription.replace(regex, "");
@@ -256,24 +267,28 @@ const Comunicados = () => {
                     );
                 })}
             </ComunicadosList>
-            <Pagination>
-                <Pagination.First onClick={() => handlePageChange(1)} />
-                <Pagination.Prev onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} />
-                {generatePaginationWithEllipsis().map((pageNumber, index) => (
-                    <Pagination.Item
-                        key={index}
-                        disabled={pageNumber === "..."}
-                        active={pageNumber === currentPage}
-                        onClick={() => handlePageChange(pageNumber)}>
-                        {pageNumber}
-                    </Pagination.Item>
-                ))}
-                <Pagination.Next
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                />
-                <Pagination.Last onClick={() => handlePageChange(totalPages)} />
-            </Pagination>
+            {currentItems.length > 0 ? (
+                <Pagination>
+                    <Pagination.First onClick={() => handlePageChange(1)} />
+                    <Pagination.Prev onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} />
+                    {generatePaginationWithEllipsis().map((pageNumber, index) => (
+                        <Pagination.Item
+                            key={index}
+                            disabled={pageNumber === "..."}
+                            active={pageNumber === currentPage}
+                            onClick={() => handlePageChange(pageNumber)}>
+                            {pageNumber}
+                        </Pagination.Item>
+                    ))}
+                    <Pagination.Next
+                        onClick={() => handlePageChange(currentPage + 1)}
+                        disabled={currentPage === totalPages}
+                    />
+                    <Pagination.Last onClick={() => handlePageChange(totalPages)} />
+                </Pagination>
+            ) : (
+                ""
+            )}
         </CardIntranet>
     );
 };

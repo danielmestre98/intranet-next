@@ -8,6 +8,11 @@ export const ComunicadosList = styled.div`
     margin-bottom: 20px;
 `;
 
+export const NenhumComunicado = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
 export const ComunicadosItem = styled.div`
     .header {
         padding: 10px 15px;
