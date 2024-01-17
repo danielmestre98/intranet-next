@@ -36,7 +36,7 @@ const userSlice = createSlice({
             //Deixar o nome do usuário apenas as primeiras letra maiúsculas
             action.payload.usuario_nome = action.payload.usuario_nome
                 .toLowerCase()
-                .replace(/\b\w/g, (l) => l.toUpperCase());
+                .replace(/(?:^|\s|\p{P}|[-'])\S/gu, (l) => l.toUpperCase());
             state.currentUser = action.payload;
         },
         userNotif: (state, action) => {
