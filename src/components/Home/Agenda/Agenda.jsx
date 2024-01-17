@@ -186,7 +186,7 @@ const Agenda = () => {
                                         <span className="nome">
                                             {`${event.usuario_nome
                                                 .toLowerCase()
-                                                .replace(/\b\w/g, (l) => l.toUpperCase())} - ${
+                                                .replace(/(?:^|\s|\p{P}|[-'])\S/gu, (l) => l.toUpperCase())} - ${
                                                 event.local === "SEDS"
                                                     ? event.departamento_descricao
                                                     : `DRADS ${event.drads_descricao} ${
