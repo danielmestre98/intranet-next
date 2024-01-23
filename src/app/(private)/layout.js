@@ -43,7 +43,7 @@ export default function PrivateLayout({ children }) {
 
     useEffect(() => {
         const showModal = () => {
-            window.open("https://recadastramentoanual.sp.gov.br/recadastramentoanual/noauth/LoginPrepare.do", "_blank");
+            window.open("https://recad.sp.gov.br/", "_blank");
             setModalShow(true);
         };
 
