@@ -49,7 +49,7 @@ const RightBar = () => {
         <>
             <UserCard />
             <CardIntranet
-                cardBodyStyle={{ padding: "12px 30px 30px" }}
+                cardBodyStyle={{ padding: "20px 30px 30px" }}
                 style={{ backgroundColor: "#b3cce4", marginTop: "0px", textAlign: "center", maxHeight: "140px" }}>
                 <LinkRecadastramento href="/documentacao/recadastramento">
                     <b>
@@ -57,8 +57,6 @@ const RightBar = () => {
                         <br />
                         Recadastramento Anual
                     </b>
-                    <br />
-                    Este é o mês do seu aniversário?
                     <br />
                     Clique aqui, saiba o que é e faça o seu!
                 </LinkRecadastramento>

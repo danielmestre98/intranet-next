@@ -21,10 +21,10 @@ const Recadastramento = () => {
                         para funcionários afastados ou licenciados.
                     </div>
                 </ListItemDropdown>
-                <ListItemDropdown buttonName="Quando deve ser feito o recadastramento?">
+                <ListItemDropdown singleChild buttonName="Quando deve ser feito o recadastramento?">
                     <div>
-                        Deve ser feito anualmente, no mês do aniversário dos servidores e empregados públicos civis e
-                        militares.
+                        No exercício de 2024, o recadastramento deverá ser realizado no período de 17/01/2024 a
+                        17/03/2024, por todos os servidores, empregados públicos e militares.
                     </div>
                 </ListItemDropdown>
                 <ListItemDropdown singleChild buttonName="Qual o objetivo do recadastramento?">
@@ -43,28 +43,28 @@ const Recadastramento = () => {
                 <ListItemDropdown buttonName="Legislação">
                     <ListItemDropdownLink
                         toBlank
-                        href="https://recadastramentoanual.gestaopublica.sp.gov.br/recadastramentoanual/manuais/Decreto_52691.pdf">
-                        Decreto nº 52.692/2008
+                        href="https://www.doe.sp.gov.br/executivo/decretos/decreto-n-68306-de-16-de-janeiro-de-2024-20240117116691121">
+                        Decreto nº 68.306, de 16 de janeiro de 2024
                     </ListItemDropdownLink>
                     <ListItemDropdownLink
                         toBlank
-                        href="https://recadastramentoanual.gestaopublica.sp.gov.br/recadastramentoanual/manuais/Resolucao_SGP_004.pdf">
-                        Resolução SGP nº 004/2008
+                        href="http://vclipping.planejamento.sp.gov.br/Vclipping1/images/b/be/P%C3%A1ginas_de_Resolucao_SGP_004_AnexoI.pdf">
+                        Resolução SGP nº 04 de 10 de março de 2008
                     </ListItemDropdownLink>
                     <ListItemDropdownLink
                         toBlank
-                        href="https://recadastramentoanual.gestaopublica.sp.gov.br/recadastramentoanual/manuais/Comunicado_DOE_20090603.pdf">
-                        Comunicado D.O.E. de 03/06/2009 - Retificação da Resolução
+                        href="https://www.doe.sp.gov.br/executivo/secretaria-de-gestao-e-governo-digital/resolucao-sggd-01-de-18-01-2024-20240119112611094038">
+                        Resolução SGGD nº 1, de 18 de janeiro de 2024
                     </ListItemDropdownLink>
                 </ListItemDropdown>
-                <ListItemDropdown singleChild buttonName="Quando deve ser feito o recadastramento?">
+                <ListItemDropdown singleChild buttonName="Canais para realizar o Recadastramento">
                     <div>
-                        Para fazer o recadastramento, clique no link abaixo: <br />
-                        <Link
-                            target="_blank"
-                            href="https://recadastramentoanual.sp.gov.br/recadastramentoanual/noauth/LoginPrepare.do">
-                            Recadastramento Anual
+                        I - Portal Web{" "}
+                        <Link target="_blank" href="https://recad.sp.gov.br">
+                            https://recad.sp.gov.br
                         </Link>
+                        <br />
+                        II - Aplicativo SOU.SP.GOV.BR, disponível nas lojas de aplicativos para Android e iOS.
                     </div>
                 </ListItemDropdown>
             </List>
