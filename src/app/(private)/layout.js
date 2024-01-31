@@ -40,6 +40,26 @@ export default function PrivateLayout({ children }) {
     const [modalShow, setModalShow] = useState(false);
     const [modalNovoNome, setModalNovoNome] = useState(false);
     const [recadastramentoCheck, setRecastramentoCheck] = useState(true);
+    const [isEventAllowed, setIsEventAllowed] = useState(true);
+
+    useEffect(() => {
+        const handleFocus = () => {
+            // Code to execute when the window gains focus
+            if (isEventAllowed) {
+                axios.post("/user/last-seen");
+                setIsEventAllowed(false);
+                setTimeout(() => {
+                    setIsEventAllowed(true);
+                }, 30000);
+            }
+        };
+
+        window.addEventListener("focus", handleFocus);
+
+        return () => {
+            window.removeEventListener("focus", handleFocus);
+        };
+    }, [isEventAllowed]);
 
     useEffect(() => {
         const showModal = () => {
