@@ -8,8 +8,6 @@ import Providers from "./Redux/provider";
 import StyledComponentsRegistry from "./registry";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import { useEffect, useState } from "react";
-import axios from "@/hooks/axiosInstance";
 
 export const metadata = {
     title: ":: INTRANET SEDS ::",
@@ -17,25 +15,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-    const [isEventAllowed, setIsEventAllowed] = useState(true);
-    useEffect(() => {
-        const handleFocus = () => {
-            // Code to execute when the window gains focus
-            if (isEventAllowed) {
-                axios.post("/user/last-seen");
-                setIsEventAllowed(false);
-                setTimeout(() => {
-                    setIsEventAllowed(true);
-                }, 30000);
-            }
-        };
-
-        window.addEventListener("focus", handleFocus);
-
-        return () => {
-            window.removeEventListener("focus", handleFocus);
-        };
-    }, [isEventAllowed]);
     return (
         <html lang="pt-br">
             <body>
