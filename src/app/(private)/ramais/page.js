@@ -65,7 +65,7 @@ const Ramais = () => {
                 departamento = ramal?.departamentos?.departamento_descricao;
             } else {
                 departamento = `DRADS ${ramal?.drads?.drads_descricao} ${
-                    ramal?.drads.drads_descricao_secundaria || ""
+                    ramal?.drads?.drads_descricao_secundaria || ""
                 }`;
             }
 
