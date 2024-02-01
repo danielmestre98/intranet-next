@@ -50,7 +50,7 @@ export default function PrivateLayout({ children }) {
                 setIsEventAllowed(false);
                 setTimeout(() => {
                     setIsEventAllowed(true);
-                }, 30000);
+                }, 60000 * 10);
             }
         };
 
