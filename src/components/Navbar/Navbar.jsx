@@ -48,7 +48,7 @@ const Navbar = () => {
             e.target.id !== "search-input" &&
             e.target.id !== "search-results" &&
             e.target.parentNode.parentNode.id !== "search-results" &&
-            e.target.parentNode.parentNode.parentNode.id !== "search-results"
+            e.target.parentNode.parentNode.parentNode?.id !== "search-results"
         ) {
             hideSearchInput();
             searchInput.current.value = "";
@@ -95,10 +95,11 @@ const Navbar = () => {
         setShowSearch(false);
         setShowSearchResults(false);
     };
-    const showSearchInput = (e) => {
+    const showSearchInput = async (e) => {
         document.body.addEventListener("mousedown", clickHandler);
 
-        setShowSearch(true);
+        await setShowSearch(true);
+        searchInput.current.focus();
     };
 
     const redirectUser = (e) => {
