@@ -3,7 +3,7 @@
 import CardIntranet from "../Card/Card";
 import UserCard from "./UserCard/UserCard";
 import axios from "../../hooks/axiosInstance";
-import { LinkRecadastramento, MenuServicoesBotao, MenuServicos, Spotify } from "./styles";
+import { MenuServicoesBotao, MenuServicos, Spotify } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook, faEnvelope, faLaptop, faPhoneSquare, faWifi, faWrench } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
@@ -48,19 +48,6 @@ const RightBar = () => {
     return (
         <>
             <UserCard />
-            <CardIntranet
-                cardBodyStyle={{ padding: "20px 30px 30px" }}
-                style={{ backgroundColor: "#b3cce4", marginTop: "0px", textAlign: "center", maxHeight: "140px" }}>
-                <LinkRecadastramento href="/documentacao/recadastramento">
-                    <b>
-                        Importante!
-                        <br />
-                        Recadastramento Anual
-                    </b>
-                    <br />
-                    Clique aqui, saiba o que é e faça o seu!
-                </LinkRecadastramento>
-            </CardIntranet>
             <CardIntranet style={{ marginTop: "15px" }} cardBodyStyle={{ padding: "30px" }} cardTitle="Serviços">
                 <MenuServicos>
                     <MenuServicoesBotao

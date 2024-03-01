@@ -1,16 +1,6 @@
 import Link from "next/link";
 import { styled } from "styled-components";
 
-export const LinkRecadastramento = styled(Link)`
-    color: #000;
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-        text-decoration-color: #8b2424;
-    }
-`;
-
 export const MenuServicos = styled.ul`
     list-style: none;
     display: flex;
