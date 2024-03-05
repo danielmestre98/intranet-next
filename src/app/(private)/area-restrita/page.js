@@ -14,11 +14,6 @@ const publicModules = [
         nome_modulo: "Calcular data",
     },
     { id_modulo: "1000", url_modulo: "agenda", nome_modulo: "Agenda de eventos" },
-    {
-        id_modulo: "1001",
-        url_modulo: "agendamento-sala-da",
-        nome_modulo: "Agendamento sala DA",
-    },
     { id_modulo: "1002", url_modulo: "comunicar-exoneracao", nome_modulo: "Comunicar Exoneração" },
 ];
 
