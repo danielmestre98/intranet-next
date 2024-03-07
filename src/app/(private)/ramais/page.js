@@ -165,7 +165,9 @@ const Ramais = () => {
                                 <img
                                     src={
                                         item?.usuario_img
-                                            ? `${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/userimg/${item?.usuario_id}.jpg`
+                                            ? `${process.env.NEXT_PUBLIC_UPLOADS_URL}/uploads/userimg/${
+                                                  item?.usuario_id
+                                              }.jpg?hash=${btoa(Math.random() * 100)}`
                                             : "/img/assets/default-user-image.png"
                                     }
                                     alt="imagem do usuário"
