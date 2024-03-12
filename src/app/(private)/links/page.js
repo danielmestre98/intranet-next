@@ -30,8 +30,8 @@ const Links = () => {
                     - E-POUPATEMPO
                 </ListItem>
                 <ListItem
-                    href="/downloads/IRPF2023Win64v1.0.rar"
-                    extraText=" - A declaração e o envio são feitos em um único programa na versão 2023">
+                    href="/downloads/IRPF2024Win64v1.0.zip"
+                    extraText=" - A declaração e o envio são feitos em um único programa na versão 2024">
                     - DOWNLOAD DO PROGRAMA IRPF
                 </ListItem>
                 <ListItem href="http://intranet/usr/file/programas/java_virtual_machine_7.zip">
