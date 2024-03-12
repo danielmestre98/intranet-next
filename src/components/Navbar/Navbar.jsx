@@ -138,6 +138,9 @@ const Navbar = () => {
                         href="http://diariooficial.imprensaoficial.com.br/nav_v4/index.asp?c=4">
                         Diário Oficial
                     </RouterLinkDropdown>
+                    <RouterLinkDropdown target="_blank" href="https://www.doe.sp.gov.br/">
+                        Novo Diário Oficial
+                    </RouterLinkDropdown>
                     <RouterLinkDropdown href="/documentacao/sala-situacao">Sala de Situação</RouterLinkDropdown>
                     <RouterLinkDropdown href="/documentacao/identidade-visual">Identidade Visual</RouterLinkDropdown>
                     <RouterLinkDropdown target="_blank" href="/documents/Manual_SEI_SP.pdf">

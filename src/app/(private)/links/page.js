@@ -24,6 +24,7 @@ const Links = () => {
                 <ListItem href="http://www.agorainvest.com.br/">- COTAÇÃO DO DÓLAR</ListItem>
                 <ListItem href="http://www.iamspe.sp.gov.br/">- HOSPITAL DO SERVIDOR PÚBLICO ESTADUAL</ListItem>
                 <ListItem href="http://bit.ly/9YjzIh">- DIÁRIO OFICIAL</ListItem>
+                <ListItem href="https://www.doe.sp.gov.br/">- NOVO DIÁRIO OFICIAL</ListItem>
                 <ListItem href="http://www.bioleo.org.br/">- PROGRAMA BIÓLEO</ListItem>
                 <ListItem href="http://www.e-agendamento.poupatempo.sp.gov.br/agenda/home.seam">
                     - E-POUPATEMPO
