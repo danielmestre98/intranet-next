@@ -41,6 +41,9 @@ const Formularios = () => {
                 <ListItem href="/documents/formularios/TI_Acesso Externo_V01_25-08.xlsx">
                     - Solicitação de liberação de acesso externo - DNI
                 </ListItem>
+                <ListItem href={`https://portal.seds.sp.gov.br/formularios/cafe/${localStorage.getItem("userToken")}`}>
+                    - Solicitação de Coffee Break
+                </ListItem>
             </List>
         </CardIntranet>
     );
