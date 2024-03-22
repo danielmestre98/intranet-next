@@ -5,12 +5,21 @@ import UserCard from "./UserCard/UserCard";
 import axios from "../../hooks/axiosInstance";
 import { MenuServicoesBotao, MenuServicos, Spotify } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook, faEnvelope, faLaptop, faPhoneSquare, faWifi, faWrench } from "@fortawesome/free-solid-svg-icons";
+import {
+    faBook,
+    faEnvelope,
+    faLaptop,
+    faNewspaper,
+    faPhoneSquare,
+    faWifi,
+    faWrench,
+} from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Birthdays from "./Birthdays/Birthdays";
 import { toast } from "react-toastify";
+import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 
 function isValidURL(str) {
     try {
@@ -49,6 +58,27 @@ const RightBar = () => {
         <>
             <UserCard />
             <CardIntranet style={{ marginTop: "15px" }} cardBodyStyle={{ padding: "30px" }} cardTitle="Serviços">
+                <OverlayTrigger
+                    placement="right"
+                    overlay={
+                        <Tooltip id="tooltip-right">
+                            Utilize o mesmo login e senha usados para acessar o computador.
+                            <br />
+                            Senha wifi visitantes: Seds*2@2@
+                        </Tooltip>
+                    }>
+                    <FontAwesomeIcon
+                        icon={faWifi}
+                        size="xl"
+                        style={{
+                            position: "absolute",
+                            right: "10px",
+                            top: "13px",
+                            color: "white",
+                            cursor: "help",
+                        }}
+                    />
+                </OverlayTrigger>
                 <MenuServicos>
                     <MenuServicoesBotao
                         onClick={handleMenuServicoClick}
@@ -81,15 +111,12 @@ const RightBar = () => {
                     </MenuServicoesBotao>
                     <MenuServicoesBotao>
                         <FontAwesomeIcon
-                            onClick={() =>
-                                alert(
-                                    "Utilize o mesmo login e senha usados para acessar o computador.\nSenha wifi visitantes: Seds*2@2@"
-                                )
-                            }
-                            icon={faWifi}
+                            id="https://www.doe.sp.gov.br/"
+                            onClick={handleMenuServicoClick}
+                            icon={faNewspaper}
                             size="5x"
                         />
-                        <p>Wi-Fi</p>
+                        <p>Diário Oficial</p>
                     </MenuServicoesBotao>
                     <MenuServicoesBotao id="/biblioteca" onClick={handleMenuServicoClick}>
                         <FontAwesomeIcon icon={faBook} size="5x" />
