@@ -5,9 +5,9 @@ const Edesp = () => {
         <CardIntranet cardTitle="EDESP" bigTitle>
             <ul>
                 <li>
-                    CRONOGRAMA TRIMESTRAL DE AÇÕES DE FORMAÇÃO E CAPACITAÇÃO –{" "}
+                    CALENDÁRIO DE AÇÕES DE FORMAÇÃO E CAPACITAÇÃO –{" "}
                     <a target="_blank" rel="noreferrer" href="http://bit.ly/sedsedesp-2024">
-                    http://bit.ly/sedsedesp-2024
+                        http://bit.ly/sedsedesp-2024
                     </a>{" "}
                 </li>
                 <li>
