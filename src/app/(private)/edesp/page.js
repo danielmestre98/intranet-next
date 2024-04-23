@@ -15,7 +15,7 @@ const Edesp = () => {
                     <a
                         target="_blank"
                         rel="noreferrer"
-                        href="/documents/edesp/PLANO DE ATIVAÇÃO DE AÇÃO FORMATIVA ON-LINE.docx">
+                        href="/documents/edesp/SOLICITAÇÃO DE ATIVAÇÃO DE AÇÃO FORMATIVA ON-LINE OU HÍBRIDA ok.docx">
                         {" "}
                         Solicitação de Capacitação On-line
                     </a>
@@ -25,7 +25,7 @@ const Edesp = () => {
                     <a
                         target="_blank"
                         rel="noreferrer"
-                        href="/documents/edesp/PLANO DE ATIVAÇÃO DE AÇÃO FORMATIVA PRESENCIAL.docx">
+                        href="/documents/edesp/SOLICITAÇÃO DE ATIVAÇÃO DE AÇÃO DE CAPACITAÇÃO OU FORMAÇÃO PRESENCIAL ok.docx">
                         Solicitação de Capacitação Presencial
                     </a>
                 </li>
