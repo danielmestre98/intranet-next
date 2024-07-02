@@ -1,5 +1,6 @@
 "use client";
 
+import { logoutUser } from "@/app/Redux/user/slice";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
