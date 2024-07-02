@@ -10,7 +10,7 @@ const Logout = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(logoutUser());
-        router.push("/login");
+        window.location.reload();
     }, []);
     return;
 };
